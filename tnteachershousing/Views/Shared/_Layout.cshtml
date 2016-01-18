@@ -3,42 +3,92 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta name="description" content="Tnteachers Trust">
+    <meta name="author" content="Tn Teachers Trust">
+    <meta name="keywords" content="Tnteachers Trust" />
+    <link rel="shortcut icon" href="~/Content/images/favicon.png" type="image/x-icon">
 
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,300italic,400italic' rel='stylesheet' type='text/css'>
+
+    <title>@ViewBag.Title - Tamilnadu Teachers Trust</title>
+    @Styles.Render("~/Content/styles")
+    @Styles.Render("~/Content/mainmenu")
+    @RenderSection("ProjectListStyle",required:false)
+    @RenderSection("ProjectDescription",required:false)
+    @RenderSection("allotment_form",required:false)
+    @RenderSection("projectdesc",required:false)
+    
+    <!-- REVOLUTION SLIDER -->
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/revolutionslider/rs-plugin/css/settings.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="~/Content/assets/css/revolutionslider/css/slider_main.css" media="screen" />	
+    @Scripts.Render("~/bundles/jquery")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    @Html.Partial("header")
+    <div class="container_full">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
+    @Html.Partial("footer")
+    
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="~/Content/assets/js/jquery.flexisel.js"></script>
+    <script src="~/Content/assets/js/mainmenu/fhmm.js"></script>
+
+    <script type="text/javascript" src="~/Content/assets/js/mainmenu/sticky.js"></script>
+    <script type="text/javascript" src="~/Content/assets/js/mainmenu/modernizr.custom.75180.js"></script>
+    <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
+    <script type="text/javascript" src="~/Content/assets/css/revolutionslider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+    <script type="text/javascript" src="~/Content/assets/css/revolutionslider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <!-- REVOLUTION SLIDER -->
+    <script type="text/javascript" src="~/Content/assets/css/revolutionslider/rs-plugin/js/custom2.js"></script>
+
+    <script type="text/javascript">
+	// Menu drop down effect
+	$('.dropdown-toggle').dropdownHover().dropdown();
+	$(document).on('click', '.fhmm .dropdown-menu', function(e) {
+	  e.stopPropagation()
+	})
+    </script>
+
+
+<script type="text/javascript">
+$(window).load(function() {
+	$("#flexiselDemo2").flexisel({
+		enableResponsiveBreakpoints: true,
+		responsiveBreakpoints: {
+			portrait: {
+				changePoint:480,
+				visibleItems: 1
+			},
+			landscape: {
+				changePoint:640,
+				visibleItems: 2
+			},
+			tablet: {
+				changePoint:768,
+				visibleItems: 3
+			}
+		}
+	});
+});
+
+$(function(){
+	$('#news_form').validate({
+		rules:
+		{
+			news_mail: {
+				required: true,
+				email:true
+			}
+		}
+	});
+});
+    </script>
+    @RenderSection("allotement_scripts",required:false)
+    @RenderSection("projectdescScripts", required:false)
 </body>
 </html>

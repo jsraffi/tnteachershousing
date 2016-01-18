@@ -14,6 +14,11 @@ namespace tnteachershousing
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "allotment",
+                url: "{controller}/{action}/{productname}/{id}",
+                defaults: new { controller = "Home", action = "Index", productname = UrlParameter.Optional, id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

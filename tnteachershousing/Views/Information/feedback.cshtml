@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Feedback";
+}
+@section allotment_form
+{
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/js/form/sky-forms.css")" />
+}
+
+<div class="clearfix"></div>
+
+<!-- Contant
+======================================= -->
+
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Home", "index", "Home", null, new { @style = "color:white" })</li>
+                <li>Feedback</li>
+            </ul>
+            <h2>Feedback</h2>
+        </div>
+    </div>
+</section>
+
+
+<div class="clearfix"></div>
+
+<div class="container ContentHeight" >
+
+    <div class="content_fullwidth">
+
+
+        <div class="reg_form">
+            <form method="post" action="" id="sky-form" class="sky-form">
+                <header>Feedback form</header>
+
+                <fieldset>
+                    <section>
+                        <label class="input">
+                            <i class="icon-append icon-user"></i>
+                            <input type="text" name="name" placeholder="Name">
+                            <b class="tooltip tooltip-bottom-right">Needed to Enter the Name</b>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="input">
+                            <i class="icon-append icon-envelope-alt"></i>
+                            <input type="email" name="email" placeholder="Email address">
+                            <b class="tooltip tooltip-bottom-right">Needed to Enter Email account</b>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="input">
+                            <i class="icon-append icon-user"></i>
+                            <input type="text" name="phone" placeholder="Enter Mobile Number">
+                            <b class="tooltip tooltip-bottom-right">Needed to Enter the Mobile Number</b>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label class="textarea">
+                            <textarea rows="4" name="message" id="message" placeholder="Share your feedback"></textarea>
+                            <b class="tooltip tooltip-bottom-right">Please share a feedback</b>
+                        </label>
+                    </section>
+
+                </fieldset>
+                <footer>
+                    <button type="submit" name="smt_contact" class="button">Submit</button>
+                </footer>
+            </form>
+        </div>
+
+    </div>
+
+</div><!-- end content area -->
+
+
+<div class="clearfix margin_top7"></div>

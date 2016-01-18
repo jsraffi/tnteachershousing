@@ -23,9 +23,16 @@ namespace tnteachershousing
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/styles").Include(
+                      "~/Content/assets/css/bootstrap.css",
+                      "~/Content/assets/css/Site.css",
+                      "~/Content/assets/css/style.css",
+                      "~/Content/assets/css/font-awesome.css"));
+
+            bundles.Add(new StyleBundle("~/Content/mainmenu").Include(
+                        "~/Content/assets/js/mainmenu/sticky.css",
+                        "~/Content/assets/js/mainmenu/bootstrap.css",
+                        "~/Content/assets/js/mainmenu/fhmm.css"));
         }
     }
 }

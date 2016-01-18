@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "FAQ-Frequently asked question";
+}
+<style>
+     .address_info {
+	float: left;
+	background-color: #f9f9f9;
+	border: 1px solid #e1e1e1;
+	padding: 20px 20px 10px 20px;
+	width: 91%;
+	margin-bottom: 40px;
+}
+.address_info.two {
+	background-color: #fff;
+	border: none;
+	margin-bottom: 20px;
+	padding-top: 0px;
+}
+.address_info h3 i {
+	font-weight: 500;
+	font-style: normal;
+}
+
+        .content_fullwidth {
+	float: left;
+	width: 100%;
+	padding: 59px 0px 0px 0px;
+}
+.content_left {
+	float: left;
+	width: 71%;
+	padding: 59px 0px 0px 0px;
+}
+
+.content_right {
+	float: right;
+	width: 71%;
+	padding: 59px 0px 0px 0px;
+}
+
+    .right_sidebar {
+	float: right;
+	width: 25%;
+	padding: 59px 0px 0px 0px;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/assets/js/tabs/assets/css/responsive-tabs3.css")">
+
+<!-- accordion -->
+<link rel="stylesheet" href="@Url.Content("~/Content/assets/js/accordion/accordion.css")" type="text/css" media="all">
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Home", "index", "Home", null, new { @style = "color:white" })</li>
+                <li>FAQs</li>
+            </ul>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+    </div>
+</section><!-- end post-wrapper-top -->
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="col-xs-12 pv-10">
+        </div>
+    </div>
+</section>
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container ContentHeight">
+        <div class="row">
+
+            <div id="content" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 clearfix">
+
+                <div class="accrodation">
+                    <!-- section 1 -->
+                    <span class="acc-trigger active"><a>Why should I carry out a final inspection on the property I am buying?</a></span>
+                    <div class="acc-container">
+                        <div class="content">
+                            <p>No matter how excited you are about purchasing your new house or unit, it is prudent to undertake a final inspection to ensure that the property is still in the same condition it was when you negotiated the deal.<br /> <br />You should check that all the fixtures and fittings included in the contract are still present and that the previous residents did not cause any damage when moving out of the property.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div><!-- end content -->
+
+            <div id="right_sidebar" class="col-lg-4 col-md-4 col-sm4 col-xs-12 clearfix">
+                <div class="address_info two">
+                    <h3>Contact <i>Info</i></h3>
+                    <p>Please be patient while waiting for response. (24/7 Support!) <strong>Phone General Inquiries: 91 - 44 - 4909 7777 ( 10 Lines ) </strong></p>
+                </div><!-- end section -->
+            </div><!-- #right_sidebar -->
+
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end generalwrapper -->
+
+<script type="text/javascript" src="~/Content/assets/js/accordion/custom.js"></script>

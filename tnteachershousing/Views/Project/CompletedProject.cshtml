@@ -1,0 +1,655 @@
+﻿
+@{
+    ViewBag.Title = "TN TEACHERS TRUST | Chennai | Coimbatore | Vilupuram | Chengalpattu";
+}
+@section ProjectListStyle
+{
+    <link href="@Url.Content("~/Content/assets/css/lightbox.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/css/skdslider.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/js/form/sky-forms.css")" rel="stylesheet" type="text/css" />
+}
+
+
+<style>
+    .boxes {
+        height: 140px;
+        overflow: hidden;
+    }
+</style>
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Home", "index", "Home", null, new { @style = "color:white" })</li>
+                <li>Project</li>
+                <li>Completed</li>
+            </ul>
+            <h2>Completed</h2>
+        </div>
+    </div>
+</section><!-- end post-wrapper-top -->
+
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="col-xs-12 pv-10">
+        </div>
+    </div>
+    </section>
+
+        <section class="generalwrapper dm-shadow clearfix">
+            <div class="container">
+                <div class="row">
+                    <div id="content" class="col-lg-9 col-md-8 col-sm-8 col-xs-12 clearfix">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad project-box properties-rows clearfix">
+                            <div class="filter">
+                                <ul class="project-list-view">
+                                    <li><a href="@Url.Action("ProjectGridView","Project")"><img src="~/Content/assets/images/grid-page-icon.png" /></a></li>
+                                </ul>
+                            </div><!-- /.filter -->
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad clearfix" id="updateResultDiv">
+
+
+
+
+                            <div class="table-style">
+                                <table class="table-list">
+                                    <tbody>
+                                        <tr>
+                                            <th>Project Name</th>
+                                            <th>Units</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Satellite Township  - Phase I , Chennai ,Padappai
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>500</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers DJM City , Chennai ,Guduvanchery
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>60</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Silicon City – Phase I, Chennai ,Near Mahendra City
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>400</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Golden Nagar , Madhuranthagam ,Silavattam
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>150</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Mahalakshmi Nagar, Thiruvallur  ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>70</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Rajarajeswari Nagar, Cheyyar ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>90</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sri Bhagya Nagar , Coimbatore ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>50</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sai Baba Nagar , Coimbatore  ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>100</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachres Rajarajeswari Nagar - Phase I, Coimbatore ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>175</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Jai Garden , Madurai ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>390</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sabari Nagar, Coimbatore  ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>70</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Godavery Nagar, Thiruvallur ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>86</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Arul Jothi Nagar, Thirunelveli ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>143</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sai DJM Avenue , Chennai ,Guduvanchery
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>85</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sumangali Nagar , Chennai ,Perumattunallur, Guduvanchery
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>195</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Satellite Township (Phase I ), Thiruvallur ,Sriperambudur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>360</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Satellite Township (Phase II), Thiruvallur ,Sriperambudur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>360</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Aswini Garden, Thiruvallur ,Sriperambudur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>33</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sai Baba Nagar, Chennai ,Guduvanchery
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>70</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Lalith Nagar , Chennai ,Pukkathrai
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>250</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Thiru Murugan Nagar , Coimbatore ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>121</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Satellite Township Phase I, Karur ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>500</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Satellite Township, Thiruvarur ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>600</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sai Green Garden , Kodaikanal ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>50</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Colony , Chengalpattu ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>219</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Colony - Extn, Chengalpattu ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>53</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Colony - Extn I, Chengalpattu ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>310</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Sri Venkateswara Nagar - West , Trichy ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>200</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Chennai Fair Land, Chennai ,Malaipattu Manimangalam
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>59</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Lakshmi Garden Phase I , Villupuram ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>700</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Vijay Nagar, Mamandur ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>47</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Classic Garden , Coimbatore ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>130</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Colony, Coimbatore ,Pollachi
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>175</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Spanish City, Thiruvallur ,Sriperumpudhur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>500</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Highway City - Phase I, Ulundurpet ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>400</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Satellite Township, Virudhunagar ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>1200</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Kovai Hills, Coimbatore ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>220</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Lakshmi Garden Phase II, Villupuram ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>120</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Satellite Township Phase II, Karur ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>348</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers VIP Layout, Chennai ,Padappai
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>92</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Sai SA Garden, Bangalore ,
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>132</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Green Meadows - Phase I, Thiruvallur ,Sriperumbudhur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>48</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Green Meadows - Phase II, Thiruvallur ,Sriperumbudhur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>49</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Green Meadows - Phase III, Thiruvallur ,Sriperumbudhur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>52</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align:left;">
+                                                Teachers Green Meadows - Phase IV, Thiruvallur ,Sriperumbudhur
+                                            </td>
+                                            <td>
+                                                <span class="area first"><strong><i class="icon-sqft"></i>54</strong></span>
+                                            </td>
+                                            <td>
+                                                <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div><!-- end content -->
+
+                    <div id="right_sidebar" class="col-lg-3 col-md-4 col-sm4 col-xs-12 clearfix">
+                        <div class="property-filter widget">
+                        <div class="content">
+                        <form method="get" action="#">
+                            <div class="type control-group">
+                                <label class="control-label" for="inputType">
+                                    Status
+                                </label>
+                                <div class="controls">
+                                    <select id="inputType" name="sts">
+                                        <option value="0">Any</option>
+                                        <option value="1">Ongoing</option>
+                                        <option value="2">Completed</option>
+                                    </select>
+                                </div><!-- /.controls -->
+                            </div><!-- /.control-group -->
+                            <!-- <div class="type control-group">
+                                <label class="control-label" for="inputType">
+                                    Types
+                                </label>
+                                <div class="controls">
+                                    <select id="inputType" name="inputType">
+                                        <option value="0">Any</option>
+                                        <option value="2">Plots</option>
+                                         <option value="3">Row Houses</option>
+                                        <option value="4">Apartments</option>
+                                    </select>
+                                </div>
+                            </div><!-- /.control-group -->
+                        </form>
+                    </div><!-- /.content -->
+                </div><!-- /.property-filter -->
+                        <div class="widget clearfix">
+                            <h2>Recent Projects</h2>
+                            <div class="projuctslider">
+                                <ul id="demo1" class="slides">
+                                    <li>
+                                        <a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Housing",id = "38" })"><img src="~/Content/assets/images/sliders/revolution/tnt_302985.jpg" /></a>
+                                        <!--Slider Description example-->
+                                        <div class="slide-desc">
+                                            <h2>Covai Teachers Colony - Housing</h2>
+                                            <p><a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Housing",id = "38" })" class="more">more</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("ongoing","Project",new { productname="Teachers-Ice-Tovarno",id = "39" })"><img src="~/Content/assets/images/sliders/revolution/tnt_saibaba_colony_big.jpg" /></a>
+                                        <!--Slider Description example-->
+                                        <div class="slide-desc">
+                                            <h2>Teachers Ice Tovarna</h2>
+                                            <p><a href="/project/Teachers_Ice_Tovarna/39" class="more">more</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Plots",id = "41" })"><img src="~/Content/assets/images/sliders/revolution/tnt_308285.jpg" /></a>
+                                        <!--Slider Description example-->
+                                        <div class="slide-desc">
+                                            <h2>Covai Teachers Colony - Only Plots</h2>
+                                            <p><a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Plots",id = "41" })" class="more">more</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- #right_sidebar -->
+
+
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end generalwrapper -->
+
+<script src="~/Content/assets/js/skdslider.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		jQuery('#demo1').skdslider({delay:5000, animationSpeed: 2000,showNextPrev:false,showPlayButton:false,autoSlide:true,animationType:'fading'});
+	});
+	$(document).ready(function(){
+		$("#inputType").change(function(){
+			//alert("This is firing...");
+			var ptype = $(this).val();
+			if(ptype == 1){
+				window.location.href="/Project";
+			}else{
+				window.location.href="/Project/CompletedProject";
+			}
+		});
+	});
+</script>
+

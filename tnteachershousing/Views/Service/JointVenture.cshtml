@@ -1,0 +1,547 @@
+﻿@{
+    ViewBag.Title = "Joint Venture-TN TEACHERS TRUST | Chennai | Coimbatore | Vilupuram | Chengalpattu";
+}
+
+@section allotment_form
+{   
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/js/form/sky-forms.css")" />
+    <style>
+            .info {
+            color: #4a84bc;
+            border-color: #c6e3ff;
+            background-color: #e6f3ff !important;
+        }
+        .info, .error, .notice, .success {
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+            border: 1px solid #bbb;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+        .message-box-wrap {
+            border: 0px solid #fff;
+            padding: 10px;
+        }
+        .close-but {
+	        width: 10px;
+	        height: 10px;
+	        float: right;
+	        border: none;
+	        margin: 5px;
+	        cursor: pointer;
+	        font-size: 0px;
+	        background: url(/Content/images/elements/icon-remove.png) no-repeat center top;
+        }
+
+</style>
+    
+}
+
+
+<link rel="stylesheet" href="~/Content/assets/js/form/sky-forms-vas.css" />
+<link href="~/Content/assets/css/sumoselect.css" rel="stylesheet" />
+<style>
+    ul.applyallot {
+        margin-left: 20px;
+    }
+
+        ul.applyallot li {
+            text-align: left;
+            list-style: inherit;
+            list-style-type: disc;
+            list-style-position: inside;
+        }
+
+    .SumoSelect > .CaptionCont > label > i {
+        display: none;
+    }
+
+    .SumoSelect > .optWrapper.multiple > .options > li span i:after, .SumoSelect .select-all > span i:after {
+        display: none;
+    }
+
+    .SumoSelect > .optWrapper.multiple > .options > li span i:before, .SumoSelect .select-all > span i:before {
+        display: none;
+    }
+
+    .SlectBox {
+        width: 850px;
+        padding: 8px 8px;
+    }
+
+        .SlectBox label {
+            font-weight: normal;
+        }
+</style>
+
+<div class="clearfix"></div>
+
+<!-- Contant
+======================================= -->
+
+<!-- Contant
+======================================= -->
+
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Home", "index", "Home", null, new { @style = "color:white" })</a></li>
+                <li>Joint Venture</li>
+            </ul>
+            <h2>Joint Venture</h2>
+        </div>
+    </div>
+</section>
+
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+    <div class="content_fullwidth" style="background:url('/Content/assets/images/joint-venture-form-bg.jpg'); margin:20px 0; padding:30px 0 30px 0;">
+        <div style="width:85%;text-align:center; padding-left:15%;">
+            <div id="div1" class="info">
+                <div class="message-box-wrap">
+                    <button class="close-but" id="colosebut1">close</button> <strong>Are you Property Owner?</strong> Interested in promoting your property by way of Joint Venture or Outright
+                    Purchase and for Best offer in the market. Fill the below form with necessary information.
+                </div>
+
+                <p style="text-align:center; color:#ff0000">(Important: All Information given below will be treated in Strict Confidence with the Management and the Owner of the Property.)</p>
+            </div>
+
+        </div>
+        <div class="reg_form" style="width:70%;">
+            <div class="clearfix divider_dashed4"></div>
+            <form id="jv-form" class="sky-form" method="post" action="" novalidate="novalidate">
+                <header><h2>Joint <strong>Venture</strong> Form</h2></header>
+                <div style="padding-right:30px;">
+                    <fieldset>
+                        <section>
+                            <label class="input">
+                                <input type="text" name="ownerName" placeholder="Name of Owner" required>
+                                <b class="tooltip tooltip-bottom-right">Owner Name Required</b>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="input">
+                                <input type="text" name="mediatorName" placeholder="Name of the Mediator" required>
+                                <b class="tooltip tooltip-bottom-right">Mediator Name Required</b>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="input">
+                                <input type="email" name="mailId" placeholder="Enter Email Address" required>
+                                <b class="tooltip tooltip-bottom-right">Email Address Required</b>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="input">
+                                <input type="text" name="mobileNumber" placeholder="Name of Mobile Number" required>
+                                <b class="tooltip tooltip-bottom-right">Mobile Number Required</b>
+                            </label>
+                        </section>
+                        <section>
+                            <label class="input">
+                                <input type="text" name="areaName" placeholder="Name of Property Place or Area" required>
+                                <b class="tooltip tooltip-bottom-right">Area Name of Property Required</b>
+                            </label>
+                        </section>
+
+                        <section>
+                            <label class="textarea">
+                                <textarea rows="4" name="address" id="address" placeholder="Enter Property Address" required></textarea>
+                                <b class="tooltip tooltip-bottom-right">Address of the Property Required</b>
+                            </label>
+                        </section>
+
+                        <div class="row">
+                            <section class="col col-6">
+                                <label class="input">
+                                    <input type="text" name="gcX" placeholder="Google Coordinant (Longitude)">
+                                </label>
+                            </section>
+                            <section class="col col-6">
+                                <label class="input">
+                                    <input type="text" name="gcY" placeholder="Google Coordinant (Latitude)">
+                                </label>
+                            </section>
+                        </div>
+                        <!--  -->
+
+                        <div class="row">
+                            <section class="col col-8">
+                                <label class="input">
+                                    <input type="text" name="propertySize" placeholder="Size of Property" required>
+                                </label>
+                            </section>
+                            <section class="col col-4">
+                                <label class="select">
+                                    <select name="sizeMetric" required>
+                                        <option>Select Metrics Type</option>
+                                        <option value="Square Feet">Square Feet</option>
+                                        <option value="Acres">Acres</option>
+                                    </select>
+                                    <i></i>
+                                </label>
+                            </section>
+                        </div>
+
+                        <section>
+                            <label class="input">
+                                <input type="text" name="frontAge" placeholder="Enter Frontage Details" required>
+                                <b class="tooltip tooltip-bottom-right">Frontage Details Required</b>
+                            </label>
+                        </section>
+
+                        <section>
+                            <label class="input">
+                                <input type="text" name="roadWidth" placeholder="Enter Road Width Details" required>
+                                <b class="tooltip tooltip-bottom-right">Road Width Required</b>
+                            </label>
+                        </section>
+
+                        <section>
+                            <label class="input">
+                                <input type="text" name="roadFacingDirections" placeholder="Enter Road Facing Direction Details" required>
+                                <b class="tooltip tooltip-bottom-right">Road Facing Direction Required</b>
+                            </label>
+                        </section>
+
+                    </fieldset>
+
+                    <header><h3><strong>Terms</strong> Interested</h3></header>
+                    <fieldset>
+                        <section>
+                            <label class="select">
+                                <select name="intesteredJV" required>
+                                    <option>Interested in Joint Venture</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+
+                        <section>
+                            <label class="select">
+                                <select name="expectedRation" required>
+                                    <option>Select Expected Ratio</option>
+                                    <option value="30:70">30:70</option>
+                                    <option value="40:60">40:60</option>
+                                    <option value="50:50">50:50</option>
+                                    <option value="60:40">60:40</option>
+                                    <option value="70:30">70:30</option>
+                                    <option value="80:20">80:20</option>
+                                    <option value="90:10">90:10</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+
+                        <div class="row">
+                            <section class="col col-6">
+                                <label>Outright Purchase</label>
+                            </section>
+                            <section class="col col-3">
+                                <label class="radio">
+                                    <input type="radio" name="outRightPurchase" value="Yes"><i></i> Yes
+                                </label>
+                            </section>
+                            <section class="col col-3">
+                                <label class="radio">
+                                    <input type="radio" name="outRightPurchase" value="No" checked><i></i> No
+                                </label>
+                            </section>
+                        </div>
+
+                        <div class="row" id="outPurchaseDiv" style="display:none;">
+                            <section class="col col-8">
+                                <label class="input">
+                                    <input type="text" name="askingPrice" placeholder="Approx. asking price" required>
+                                    <b class="tooltip tooltip-bottom-right">Approx. asking price Required</b>
+                                </label>
+                            </section>
+
+                            <section class="col col-4">
+                                <label class="select">
+                                    <select name="selMetrics" required>
+                                        <option>Select Metrics Type</option>
+                                        <option value="1">Square Feet</option>
+                                        <option value="2">Acres</option>
+                                    </select>
+                                    <i></i>
+                                </label>
+                            </section>
+                        </div>
+                        <section>
+                            <label class="textarea">
+                                <textarea rows="4" name="comments" id="comments" required placeholder="Other Comments"></textarea>
+                            </label>
+                        </section>
+
+                        <section>
+                            <label>
+                                <input type="checkbox" name="propInterested" id="propInterested" checked><i></i>
+                                Yes, I am interested in Promoting my property!
+                            </label>
+                        </section>
+
+                    </fieldset>
+                </div>
+                <footer>
+                    <button type="submit" name="smt_joint" class="button">Submit</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="clearfix margin_top5"></div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+@section allotement_scripts
+{
+	<script src="~/Content/assets/js/jquery.sumoselect.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			window.asd = $('.SlectBox').SumoSelect({ csvDispCount: 3 });
+		});
+	</script>
+<!-- tabs -->
+<script src="~/Content/assets/js/tabs//assets/js/responsive-tabs.min.js" type="text/javascript"></script>
+
+<!-- jquery jcarousel -->
+<!-- <script type="text/javascript">
+	jQuery(document).ready(function() {
+			jQuery('#mycarouselthree').jcarousel();
+	});
+</script> -->
+
+<!-- accordion -->
+<script type="text/javascript" src="~/Content/assets/js/accordion/custom.js"></script>
+
+<script type="text/javascript">
+		
+	$(function() {
+		$("#vas-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{
+					required: true
+				},
+				mobile_number:
+				{
+					required: true,
+					minlength: 10,
+					digits: true
+				},
+				email:
+				{
+					required: true,
+					email: true
+				},
+				message:
+				{
+					required: true,
+					minlength: 10
+				},
+				copy:
+				{
+					required: true
+				}
+			}
+		});
+		
+		
+		// Validation
+		$("#sky-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{
+					required: true
+				},
+				email:
+				{
+					required: true,
+					email: true
+				},
+				message:
+				{
+					required: true,
+					minlength: 10
+				}
+			},
+								
+			// Messages for form validation
+			messages:
+			{
+				name:
+				{
+					required: 'Please enter your name',
+				},
+				email:
+				{
+					required: 'Please enter your email address',
+					email: 'Please enter a VALID email address'
+				},
+				message:
+				{
+					required: 'Please enter your message'
+				}
+			}
+		});
+		
+		// Validation		
+		$("#enquiryform").validate({					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{ required: true },
+				phone:
+				{	required: true,
+					minlength: 10
+				},
+				email:
+				{ required: true,
+					email:true
+				},
+				message:
+				{	required: true
+				}
+			},
+			
+			// Messages for form validation
+			messages:
+			{
+				name:
+				{ required: 'Please enter your name' },
+				email:
+				{	required: 'Please enter your email address',
+					email: 'Please enter a VALID email address'
+				},
+				phone:
+				{	required: 'Please enter your phone number',
+					minlength: 'Please enter at least 10 digits'
+				},
+				message:
+				{	required: 'Please enter your message' }
+			}
+		});
+		// Validation
+		$("#apply-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				projectId: {required: true},
+				siteVist:{required: true},
+				interestedIn:{required: true},
+				investRange:{required: true},
+				timeDuration:{required: true},	
+				institution:{required: true},	
+				loan_support:{required: true},
+				comments:
+				{
+					required: true,
+					minlength: 10
+				},
+				applicantName:
+				{
+					required: true,
+					minlength: 3
+				},
+				address:
+				{
+					required: true,
+					minlength: 3
+				},
+				cityName:
+				{
+					required: true,
+					minlength: 3
+				},
+				stateName:
+				{
+					required: true,
+					minlength: 3
+				},
+				countryName:
+				{
+					required: true,
+					minlength: 3
+				},
+				pinCode:
+				{
+					required: true,
+					minlength: 5,
+					digits:true
+				},	
+				phone:
+				{
+					required: true,
+					minlength: 10,
+					digits:true
+				},				
+				email:
+				{
+					required: true,
+					email: true
+				}
+			}
+		});
+
+		// Validation
+		$("#jv-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				ownerName: {
+					required: true,
+					minlength:3
+				},
+				mediatorName:{
+					required: true,
+					minlength:3
+				},
+				mobileNumber:{
+					required: true,
+					minlength:10
+				},
+				areaName:{
+					required: true,
+					minlength:3
+				},
+				propertySize:{required: true},	
+				address:{
+					required: true,
+					minlength:5
+				},	
+				frontAge:{required: true},
+				roadWidth:{required: true},
+				roadFacingDirections:{required: true},
+				intesteredJV:{required: true},
+				expectedRation:{required: true},
+				askingPrice:{required: true},
+				selMetrics:{required: true},
+				comments:
+				{
+					required: true,
+					minlength: 10
+				},
+				propInterested:{required: true}
+			}
+		});
+	});			
+</script>
+}

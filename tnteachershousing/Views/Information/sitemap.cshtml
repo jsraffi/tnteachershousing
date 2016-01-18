@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "sitemap";
+}
+
+<style>
+    ul.list1 {
+        padding-left: 15px;
+    }
+
+        ul.list1 li a {
+            color: #023267;
+            padding: 6px;
+        }
+
+            ul.list1 li a:hover {
+                color: #fff;
+                background: #272727;
+                border-radius: 5px;
+            }
+</style>
+<div class="clearfix"></div>
+
+<!-- Contant
+======================================= -->
+
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li><a href="index.php">Home</a></li>
+                <li>Sitemap</li>
+            </ul>
+            <h2>Sitemap</h2>
+        </div>
+    </div>
+</section>
+
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+    <div class="content_fullwidth">
+        <h4><span class="example2"><strong><strong><a href="@Url.Action("index","Home")" >Home</a></strong></strong></span></h4>
+        <h4><strong><a href="../About-Us/8/">About Us</a></strong></h4>
+        <ul class="list1">
+            <li><strong><a href="@Url.Action("overview","Home")">Overview</a></strong></li>
+            <li><strong><a href="@Url.Action("mission_statement","Home")">Chairman Message</a></strong></li>
+            <li><strong><a href="@Url.Action("management_team","Home")">Management and Team</a></strong></li>
+            <li><strong><a href="@Url.Action("core_values","Home")">Core Values</a></strong></li>
+        </ul>
+        <h4><strong>Projects</strong></h4>
+        <ul class="list1">
+            <li><strong><a href="@Url.Action("index","Project")">Ongoing</a></strong></li>
+            <li><strong><a href="@Url.Action("CompletedProject","Project")">Completed</a></strong></li>
+            <li><strong><a href="@Url.Action("AllotmentProcedure","Project")">Allotment Procedure</a></strong></li>
+        </ul>
+        <h4><strong><strong><a href="@Url.Action("JointVenture","Service")">Joint Ventures</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("ValueAdded","Service")">Value Added Services</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("index","Information")">Gallery</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("newsEvent","Information")">News &amp; Events</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("our_associate","Information")">Our Associates</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("Tetimonials","Information")">Testimonials</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("downloads","Infomation")">Downloads</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("faq","Information")">FAQs</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("usefullinks","Information")">Usefull Links</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("feedback","information")">Feedback</a></strong></strong></h4>
+        <h4><strong><strong><a href="@Url.Action("Contact","Information")">Contact Us</a></strong></strong></h4>
+    </div>
+
+</div><!-- end content area -->
+
+
+<div class="clearfix margin_top7"></div>
+

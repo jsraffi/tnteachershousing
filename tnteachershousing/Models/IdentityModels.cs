@@ -21,7 +21,7 @@ namespace tnteachershousing.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("tnhousingtrust", throwIfV1Schema: false)
         {
         }
 

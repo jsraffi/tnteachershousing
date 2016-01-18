@@ -1,0 +1,948 @@
+﻿
+@{
+    ViewBag.Title = "ProjectGridView";
+}
+
+<style>
+    .boxes {
+        height: 140px;
+        overflow: hidden;
+    }
+</style>
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Home", "index", "Home", null, new { @style = "color:white" })</li>
+                <li>Project</li>
+                <li>Completed</li>
+            </ul>
+            <h2>Completed</h2>
+        </div>
+    </div>
+</section><!-- end post-wrapper-top -->
+
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="col-xs-12 pv-10">
+        </div>
+    </div>
+    <section>
+
+        <section class="generalwrapper dm-shadow clearfix">
+            <div class="container">
+                <div class="row">
+                    <div id="content" class="col-lg-9 col-md-8 col-sm-8 col-xs-12 clearfix">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad project-box properties-rows clearfix">
+                            <div class="filter">
+                                <ul class="project-list-view">
+                                    <li><a href="@Url.Action("CompletedProject","Project")"><img src="~/Content/assets/images/list-page-icon.png" /></a></li>
+                                    
+                                </ul>
+                            </div><!-- /.filter -->
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad clearfix" id="updateResultDiv">
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Satellite Township  - Phase I </a>
+                                        <br><small class="small_title"> Chennai ,Padappai</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>500</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers DJM City </a>
+                                        <br><small class="small_title"> Chennai ,Guduvanchery</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>60</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Silicon City – Phase I</a>
+                                        <br><small class="small_title"> Chennai ,Near Mahendra City</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>400</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Golden Nagar </a>
+                                        <br><small class="small_title"> Madhuranthagam ,Silavattam</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>150</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Mahalakshmi Nagar</a>
+                                        <br><small class="small_title"> Thiruvallur  ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>70</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Rajarajeswari Nagar</a>
+                                        <br><small class="small_title"> Cheyyar ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>90</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sri Bhagya Nagar </a>
+                                        <br><small class="small_title"> Coimbatore ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>50</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sai Baba Nagar </a>
+                                        <br><small class="small_title"> Coimbatore  ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>100</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachres Rajarajeswari Nagar - Phase I</a>
+                                        <br><small class="small_title"> Coimbatore ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>175</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Jai Garden </a>
+                                        <br><small class="small_title"> Madurai ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>390</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sabari Nagar</a>
+                                        <br><small class="small_title"> Coimbatore  ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>70</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Godavery Nagar</a>
+                                        <br><small class="small_title"> Thiruvallur ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>86</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Arul Jothi Nagar</a>
+                                        <br><small class="small_title"> Thirunelveli ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>143</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sai DJM Avenue </a>
+                                        <br><small class="small_title"> Chennai ,Guduvanchery</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>85</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sumangali Nagar </a>
+                                        <br><small class="small_title"> Chennai ,Perumattunallur, Guduvanchery </small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>195</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Satellite Township (Phase I )</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperambudur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>360</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Satellite Township (Phase II)</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperambudur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>360</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Aswini Garden</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperambudur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>33</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sai Baba Nagar</a>
+                                        <br><small class="small_title"> Chennai ,Guduvanchery</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>70</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Lalith Nagar </a>
+                                        <br><small class="small_title"> Chennai ,Pukkathrai </small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>250</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Thiru Murugan Nagar </a>
+                                        <br><small class="small_title"> Coimbatore ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>121</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Satellite Township Phase I</a>
+                                        <br><small class="small_title"> Karur ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>500</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Satellite Township</a>
+                                        <br><small class="small_title"> Thiruvarur ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>600</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sai Green Garden </a>
+                                        <br><small class="small_title"> Kodaikanal ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>50</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Colony </a>
+                                        <br><small class="small_title"> Chengalpattu ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>219</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Colony - Extn</a>
+                                        <br><small class="small_title"> Chengalpattu ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>53</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Colony - Extn I</a>
+                                        <br><small class="small_title"> Chengalpattu ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>310</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Sri Venkateswara Nagar - West </a>
+                                        <br><small class="small_title"> Trichy ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>200</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Chennai Fair Land</a>
+                                        <br><small class="small_title"> Chennai ,Malaipattu Manimangalam </small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>59</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Lakshmi Garden Phase I </a>
+                                        <br><small class="small_title"> Villupuram ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>700</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Vijay Nagar</a>
+                                        <br><small class="small_title"> Mamandur ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>47</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Classic Garden </a>
+                                        <br><small class="small_title"> Coimbatore ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>130</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Colony</a>
+                                        <br><small class="small_title"> Coimbatore ,Pollachi</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>175</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Spanish City</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperumpudhur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>500</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Highway City - Phase I</a>
+                                        <br><small class="small_title"> Ulundurpet ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>400</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Satellite Township</a>
+                                        <br><small class="small_title"> Virudhunagar ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>1200</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Kovai Hills</a>
+                                        <br><small class="small_title"> Coimbatore ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>220</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Lakshmi Garden Phase II</a>
+                                        <br><small class="small_title"> Villupuram ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>120</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Satellite Township Phase II</a>
+                                        <br><small class="small_title"> Karur ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>348</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers VIP Layout</a>
+                                        <br><small class="small_title"> Chennai ,Padappai</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>92</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Sai SA Garden</a>
+                                        <br><small class="small_title"> Bangalore ,</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>132</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Green Meadows - Phase I</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperumbudhur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>48</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Green Meadows - Phase II</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperumbudhur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>49</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Green Meadows - Phase III</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperumbudhur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>52</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <div class="boxes">
+                                    <div class="boxes_img ImageWrapper">
+                                        <!-- <img class="img-responsive" src="/assets/images/projects/" alt="">
+                                        <a href="#"><div class="PStyleNe"></div></a> -->
+                                    </div>
+                                    <h3 class="left title">
+                                        <a href="#">Teachers Green Meadows - Phase IV</a>
+                                        <br><small class="small_title"> Thiruvallur ,Sriperumbudhur</small>
+                                    </h3>
+
+                                    <div class="boxed_mini_details clearfix">
+                                        <span class="area first"><strong><i class="icon-sqft"></i>54</strong></span>
+                                        <div class="box_type" style="float:right;background:#333;color:#fff; padding:6px 10px; border-radius:5px; font-weight:600;"> Sold</div>
+                                    </div>
+                                </div><!-- end boxes -->
+                            </div>
+
+                            <!-- <div id="more" class="searchmore" style="margin-top: 20px;">
+                                <a id="6" class="load_more searchmorebtn" href="#"> Show More projects<i class="fa fa-chevron-down"></i></a>
+                            </div>	 -->
+                        </div>
+
+                    </div><!-- end content -->
+
+                    <div id="right_sidebar" class="col-lg-3 col-md-4 col-sm4 col-xs-12 clearfix">
+                        <div class="widget clearfix">
+                            <h2>Recent Projects</h2>
+                            <div class="projuctslider">
+                                <ul id="demo1" class="slides">
+                                    <li>
+                                        <a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Housing",id = "38" })"><img src="~/Content/assets/images/sliders/revolution/tnt_302985.jpg" /></a>
+                                        <!--Slider Description example-->
+                                        <div class="slide-desc">
+                                            <h2>Covai Teachers Colony - Housing</h2>
+                                            <p><a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Housing",id = "38" })" class="more">more</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("ongoing","Project",new { productname="Teachers-Ice-Tovarno",id = "39" })"><img src="~/Content/assets/images/sliders/revolution/tnt_saibaba_colony_big.jpg" /></a>
+                                        <!--Slider Description example-->
+                                        <div class="slide-desc">
+                                            <h2>Teachers Ice Tovarna</h2>
+                                            <p><a href="@Url.Action("ongoing","Project",new { productname="Teachers-Ice-Tovarno",id = "39" })" class="more">more</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Plots",id = "41" })"><img src="~/Content/assets/images/sliders/revolution/tnt_308285.jpg" /></a>
+                                        <!--Slider Description example-->
+                                        <div class="slide-desc">
+                                            <h2>Covai Teachers Colony - Only Plots</h2>
+                                            <p><a href="@Url.Action("ongoing","Project",new { productname="Covai-Teachers-Colony---Plots",id = "41" })" class="more">more</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div><!-- #right_sidebar -->
+
+                </div><!-- end row -->
+            </div><!-- end container -->
+        </section><!-- end generalwrapper -->
+

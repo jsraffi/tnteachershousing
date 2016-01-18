@@ -1,0 +1,65 @@
+﻿<div class="topbar clearfix">
+</div><!-- end topbar -->
+<header class="header1" id="header">
+    <div id="trueHeader">
+        <div class="container">
+            <div class="row header-row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <div class="logo-wrapper clearfix">
+                        <div class="logo">
+                            <a href="@Url.Action("index", "Home")" title="Home">
+                                <img src="~/Content/assets/images/logo.png" alt="tnteacherstrust">
+                            </a>
+                        </div><!-- /.site-name -->
+                    </div><!-- /.logo-wrapper -->
+                </div>
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <!-- Menu -->
+                    <div class="tnav">
+                        <ul>
+                            <li>@Html.ActionLink("Home", "index", "Home")</li>
+                            <li><a href="@Url.Action("sitemap","Information")">Sitemap</a></li>
+                            <li><a href="@Url.Action("Contact","Information")">Contact</a></li>
+                            <li><a href="#">Login</a></li>
+                        </ul>
+                    </div>
+                    <!-- Menu -->
+                    <div class="menu_main" style="float:left;width:100%;">
+                        <nav class="navbar navbar-default fhmm" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle">Menu <i class="fa fa-bars tbars"></i></button>
+                            </div><!-- end navbar-header -->
+
+                            <div id="defaultmenu" class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li class="dropdown">
+                                        <a href="" data-toggle="dropdown" class="dropdown-toggle">About Us</a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>@Html.ActionLink("Overview","overview","Home")</li>
+                                            <li>@Html.ActionLink("Mission Statement", "mission_statement", "Home")</li>
+                                            <li>@Html.ActionLink("Management Team", "management_team", "Home")</li>
+                                            <li>@Html.ActionLink("Core Values", "core_values", "Home")</li>
+                                        </ul><!-- end dropdown-menu -->
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="projects.html" data-toggle="dropdown" class="dropdown-toggle">Projects</a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>@Html.ActionLink("On going", "index", "Project")</li>
+                                            <li>@Html.ActionLink("Completed", "CompletedProject", "Project")</li>
+                                            <li>@Html.ActionLink("Allotment Procedure", "AllotmentProcedure", "Project")</li>
+                                        </ul><!-- end dropdown-menu -->
+                                    </li>
+                                    <li class="dropdown">@Html.ActionLink("Joint Venture", "JointVenture", "Service")</li>
+                                    <li class="dropdown">@Html.ActionLink("Value added service", "ValueAdded", "Service")</li>
+                                    <!--<li><a href="apply-for-allotment.html" class="last">Apply for Allotment</a></li>-->
+                                </ul>
+                            </div><!-- end #navbar-collapse-1 -->
+
+                        </nav>
+                    </div>
+                </div>
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+</header><!-- end header -->       
+

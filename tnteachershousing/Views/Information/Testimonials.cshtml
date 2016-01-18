@@ -1,0 +1,375 @@
+﻿@{
+    ViewBag.Title = "Apply for allotment-TN TEACHERS TRUST | Chennai | Coimbatore | Vilupuram | Chengalpattu";
+}
+
+@section allotment_form
+{   
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/js/form/sky-forms.css")" />
+    <style>
+         .content_fullwidth {
+	float: left;
+	width: 100%;
+	padding: 59px 0px 0px 0px;
+}
+.content_left {
+	float: left;
+	width: 71%;
+	padding: 59px 0px 0px 0px;
+}
+
+.content_right {
+	float: right;
+	width: 71%;
+	padding: 59px 0px 0px 0px;
+}
+
+    .right_sidebar {
+	float: right;
+	width: 25%;
+	padding: 59px 0px 0px 0px;
+}
+    </style>
+}
+
+
+<link rel="stylesheet" href="~/Content/assets/js/form/sky-forms-vas.css" />
+<link href="~/Content/assets/css/sumoselect.css" rel="stylesheet" />
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Home", "index", "Home", null, new { @style = "color:white" })</li>
+                <li>Testimonial</li>
+            </ul>
+            <h2>Testimonials</h2>
+        </div>
+    </div>
+</section><!-- end post-wrapper-top -->
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="col-xs-12 pv-10">
+        </div>
+    </div>
+</section>
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="row">
+
+            <div id="content" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad project-box properties-rows clearfix">
+
+                    <!-- <h2 class="section_title_drakgray" style="text-align:center;"><strong>Testimonials</strong></h2> -->
+                    <blockquote>
+                        <p>The service is excellent and the personnel I worked with were great. No request is out of the question and usually can be accomodated within the current budget and in a reasonable timeframe. Very responsive team and easy company to work with. I enjoy our ongoing partnership.</p>
+                    </blockquote>
+                    <p style="text-align:right;color:#023267;font-weight:600;">- Mr. Gavaskar, Technical Lead, HCL</p>
+                </div>
+
+            </div><!-- end content -->
+
+            <div id="right_sidebar" class="col-lg-4 col-md-4 col-sm4 col-xs-12 clearfix">
+                <div class="sidebar_widget">
+                    <div class="content_box">
+                        <div class="cforms">
+
+                            <form action="/testimonials" method="post" id="sky-form" class="sky-form" enctype="multipart/form-data">
+                                <header style="font-size:16px;padding-top: 25px;">Write <strong>Testimonial!</strong></header>
+                                <fieldset>
+                                    <section>
+                                        <label class="label">Name</label>
+                                        <label class="input">
+                                            <i class="icon-append icon-user"></i>
+                                            <input type="text" name="name" id="name" placeholder="Enter your Name">
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Profession/Company Name</label>
+                                        <label class="input">
+                                            <i class="icon-append icon-user"></i>
+                                            <input type="text" name="cmp" id="cmp" placeholder="Enter your Company Name">
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">E-mail</label>
+                                        <label class="input">
+                                            <i class="icon-append icon-envelope-alt"></i>
+                                            <input type="email" name="email" id="email" placeholder="Enter Email Address">
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Write Testimonial</label>
+                                        <label class="textarea">
+                                            <i class="icon-append icon-comment"></i>
+                                            <textarea rows="4" name="message" id="message" placeholder="Write Testimonial"></textarea>
+                                        </label>
+                                    </section>
+                                    <section>
+                                        <label class="label">Upload Image <small style="font-size:10px; color:#000;">(allows only *.jpg, *.png, *.gif)</small></label>
+                                        <label class="file">
+                                            <input type="file" name="files" />
+                                        </label>
+                                    </section>
+                                </fieldset>
+                                <footer>
+                                    <button type="submit" name="smt_testimonial" class="button">Submit Testimonial</button>
+                                </footer>
+                                <div class="message">
+                                    <i class="icon-ok"></i>
+                                    <p>Your message was successfully sent!</p>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- #right_sidebar -->
+
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end generalwrapper -->}
+@section allotement_scripts
+{
+	<script src="~/Content/assets/js/jquery.sumoselect.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			window.asd = $('.SlectBox').SumoSelect({ csvDispCount: 3 });
+		});
+	</script>
+<!-- tabs -->
+<script src="~/Content/assets/js/tabs//assets/js/responsive-tabs.min.js" type="text/javascript"></script>
+
+<!-- jquery jcarousel -->
+<!-- <script type="text/javascript">
+	jQuery(document).ready(function() {
+			jQuery('#mycarouselthree').jcarousel();
+	});
+</script> -->
+
+<!-- accordion -->
+<script type="text/javascript" src="~/Content/assets/js/accordion/custom.js"></script>
+
+<script type="text/javascript">
+		
+	$(function() {
+		$("#vas-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{
+					required: true
+				},
+				mobile_number:
+				{
+					required: true,
+					minlength: 10,
+					digits: true
+				},
+				email:
+				{
+					required: true,
+					email: true
+				},
+				message:
+				{
+					required: true,
+					minlength: 10
+				},
+				copy:
+				{
+					required: true
+				}
+			}
+		});
+		
+		
+		// Validation
+		$("#sky-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{
+					required: true
+				},
+				email:
+				{
+					required: true,
+					email: true
+				},
+				message:
+				{
+					required: true,
+					minlength: 10
+				}
+			},
+								
+			// Messages for form validation
+			messages:
+			{
+				name:
+				{
+					required: 'Please enter your name',
+				},
+				email:
+				{
+					required: 'Please enter your email address',
+					email: 'Please enter a VALID email address'
+				},
+				message:
+				{
+					required: 'Please enter your message'
+				}
+			}
+		});
+		
+		// Validation		
+		$("#enquiryform").validate({					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{ required: true },
+				phone:
+				{	required: true,
+					minlength: 10
+				},
+				email:
+				{ required: true,
+					email:true
+				},
+				message:
+				{	required: true
+				}
+			},
+			
+			// Messages for form validation
+			messages:
+			{
+				name:
+				{ required: 'Please enter your name' },
+				email:
+				{	required: 'Please enter your email address',
+					email: 'Please enter a VALID email address'
+				},
+				phone:
+				{	required: 'Please enter your phone number',
+					minlength: 'Please enter at least 10 digits'
+				},
+				message:
+				{	required: 'Please enter your message' }
+			}
+		});
+		// Validation
+		$("#apply-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				projectId: {required: true},
+				siteVist:{required: true},
+				interestedIn:{required: true},
+				investRange:{required: true},
+				timeDuration:{required: true},	
+				institution:{required: true},	
+				loan_support:{required: true},
+				comments:
+				{
+					required: true,
+					minlength: 10
+				},
+				applicantName:
+				{
+					required: true,
+					minlength: 3
+				},
+				address:
+				{
+					required: true,
+					minlength: 3
+				},
+				cityName:
+				{
+					required: true,
+					minlength: 3
+				},
+				stateName:
+				{
+					required: true,
+					minlength: 3
+				},
+				countryName:
+				{
+					required: true,
+					minlength: 3
+				},
+				pinCode:
+				{
+					required: true,
+					minlength: 5,
+					digits:true
+				},	
+				phone:
+				{
+					required: true,
+					minlength: 10,
+					digits:true
+				},				
+				email:
+				{
+					required: true,
+					email: true
+				}
+			}
+		});
+
+		// Validation
+		$("#jv-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				ownerName: {
+					required: true,
+					minlength:3
+				},
+				mediatorName:{
+					required: true,
+					minlength:3
+				},
+				mobileNumber:{
+					required: true,
+					minlength:10
+				},
+				areaName:{
+					required: true,
+					minlength:3
+				},
+				propertySize:{required: true},	
+				address:{
+					required: true,
+					minlength:5
+				},	
+				frontAge:{required: true},
+				roadWidth:{required: true},
+				roadFacingDirections:{required: true},
+				intesteredJV:{required: true},
+				expectedRation:{required: true},
+				askingPrice:{required: true},
+				selMetrics:{required: true},
+				comments:
+				{
+					required: true,
+					minlength: 10
+				},
+				propInterested:{required: true}
+			}
+		});
+	});			
+</script>
+}

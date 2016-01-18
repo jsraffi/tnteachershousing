@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewBag.Title = "Our associate";
+}
+
+<style>
+    .project-box ul li {
+        list-style: inherit;
+        list-style-type: disc;
+        list-style-position: inside;
+    }
+    
+    .content_fullwidth {
+	float: left;
+	width: 100%;
+	padding: 59px 0px 0px 0px;
+}
+.content_left {
+	float: left;
+	width: 71%;
+	padding: 59px 0px 0px 0px;
+}
+
+.content_right {
+	float: right;
+	width: 71%;
+	padding: 59px 0px 0px 0px;
+}
+
+    .right_sidebar {
+	float: right;
+	width: 25%;
+	padding: 59px 0px 0px 0px;
+}
+
+</style>
+<section class="post-wrapper-top dm-shadow clearfix">
+    <div class="container">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <ul class="breadcrumb">
+                <li>@Html.ActionLink("Home", "index", "Home", null, new { @style = "color:white" })</li>
+                <li>Our Associates</li>
+            </ul>
+            <h2>Our Associates</h2>
+        </div>
+    </div>
+</section><!-- end post-wrapper-top -->
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container">
+        <div class="col-xs-12 pv-10">
+        </div>
+    </div>
+</section>
+
+<section class="generalwrapper dm-shadow clearfix">
+    <div class="container ContentHeight">
+        <div class="row">
+
+            <div id="content" class="col-lg-8 col-md-8 col-sm-8 col-xs-12 clearfix">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 nopad project-box properties-rows clearfix">
+
+                    <!-- <h2 class="section_title_drakgray" style="text-align:center;"><strong></strong></h2> -->
+                    <div class="aboutbanner">
+                        <img src="~/Content/assets/images/cms/tnt_206074.jpg">
+                    </div>
+
+                    <p style="text-align: justify;">We have strong network of associates in all parts of Tamilnadu to provide necessary services to Teachers Community with best care. We have set up offices in all the districts of Tamilnadu which act as a Project Information Center but the entire task related to Booking will be done at our head office located at Chennai.</p>
+                    <p style="text-align: justify;"><strong>Service provided by our associates includes:</strong></p>
+                    <ul>
+                        <li style="text-align: justify;">Project information Services</li>
+                        <li style="text-align: justify;">Application Distribution</li>
+                        <li style="text-align: justify;">Payment Collection</li>
+                        <li style="text-align: justify;">Marketing Services</li>
+                        <li style="text-align: justify;">Site Visit Arrangements</li>
+                        <li style="text-align: justify;">Status update</li>
+                    </ul>
+                </div>
+
+            </div><!-- end content -->
+
+            <div id="right_sidebar" class="col-lg-4 col-md-4 col-sm4 col-xs-12 clearfix">
+                <div class="clientsays_widget">
+
+                    <div class="sidebar_title"><h3>Happy <i>Client Say's</i></h3></div>
+                    <img src="~/Content/assets/images/tnt_logo_thumb.jpg" alt="">
+                    <strong>- Mr. Gavaskar, technical lead</strong><p>The service is excellent and the personnel I work with are great. No request is out of the question and usually can be accomodated within the current budget and in a reasonable timeframe. Very responsive team and easy company to work with. I enjoy our ongoing partnership.</p>
+
+                </div>
+                <div class="clearfix margin_top4"></div>
+                <div class="sidebar_widget">
+                    <div class="sidebar_title">
+                        <h3>
+                            <a href="">
+                                <img src="~/Content/assets/images/downloads.png" />
+                            </a>
+                        </h3>
+                    </div>
+                </div>
+
+            </div><!-- #right_sidebar -->
+
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end generalwrapper -->
+

@@ -26,5 +26,27 @@ namespace tnteachershousing.Controllers
 
             return View();
         }
+
+        public ActionResult overview()
+        {
+            return View();
+        }
+
+        public ActionResult mission_statement()
+        {
+            return View();
+        }
+
+        public ActionResult management_team()
+        {
+            return View();
+        }
+
+        public ActionResult core_values()
+        {
+            return View();
+        }
+
+        
     }
 }

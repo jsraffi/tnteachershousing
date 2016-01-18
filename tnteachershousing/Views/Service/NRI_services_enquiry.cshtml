@@ -1,0 +1,372 @@
+﻿@{
+    ViewBag.Title = "Apply for allotment-TN TEACHERS TRUST | Chennai | Coimbatore | Vilupuram | Chengalpattu";
+}
+
+@section allotment_form
+{   
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/js/form/sky-forms.css")" />
+    
+}
+
+
+<link rel="stylesheet" href="~/Content/assets/js/form/sky-forms-vas.css" />
+<link href="~/Content/assets/css/sumoselect.css" rel="stylesheet" />
+<style>
+    ul.applyallot {
+        margin-left: 20px;
+    }
+
+        ul.applyallot li {
+            text-align: left;
+            list-style: inherit;
+            list-style-type: disc;
+            list-style-position: inside;
+        }
+
+    .SumoSelect > .CaptionCont > label > i {
+        display: none;
+    }
+
+    .SumoSelect > .optWrapper.multiple > .options > li span i:after, .SumoSelect .select-all > span i:after {
+        display: none;
+    }
+
+    .SumoSelect > .optWrapper.multiple > .options > li span i:before, .SumoSelect .select-all > span i:before {
+        display: none;
+    }
+
+    .SlectBox {
+        width: 850px;
+        padding: 8px 8px;
+    }
+
+        .SlectBox label {
+            font-weight: normal;
+        }
+</style>
+
+<div class="clearfix"></div>
+
+<div class="clearfix"></div>
+
+<div class="container">
+
+    <div class="content_fullwidth" style="background:url('/Content/assets/images/joint-venture-form-bg.jpg'); margin:20px 0; padding:30px 0 30px 0;">
+
+        <div class="reg_form" style="width:85%;">
+            <div class="clearfix divider_dashed4"></div>
+            <form id="vas-form" class="sky-form cforms" method="post" action="" novalidate="novalidate">
+                <header><h2>Value Added <strong>Services</strong> Form</h2></header>
+                <fieldset>
+                    <section>
+                        <label class="label">Types of Services</label>
+                        <label class="select">
+                            <select name="services[]" multiple="multiple" placeholder="Hello  im from placeholder" class="SlectBox">
+
+                                <option value="Land Survey and Feasibility" >Land Survey and Feasibility</option>
+
+                                <option value="Loan Support" >Loan Support</option>
+
+                                <option value="Architectural Design"  >Architectural Design</option>
+ 
+                                <option value="Construction Support">Construction Support</option>
+
+                                <option value="Re-Sell Your Property">Re-Sell Your Property</option>
+
+                                <option value="NRI Services"  selected>NRI Services</option>
+                                <option value="others">Others</option>
+                            </select>
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label">Name</label>
+                        <label class="input">
+                            <i class="icon-append icon-user"></i>
+                            <input type="text" name="name" id="name" placeholder="Enter a Name" />
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label">E-mail</label>
+                        <label class="input">
+                            <i class="icon-append icon-envelope-alt"></i>
+                            <input type="email" name="email" id="email" placeholder="Enter a Email ID" />
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label">Mobile Number</label>
+                        <label class="input">
+                            <i class="icon-append icon-tag"></i>
+                            <input type="text" name="mobile" id="mobile" placeholder="Enter a Mobile Number" />
+                        </label>
+                    </section>
+                    <section>
+                        <label class="label">Write a Breif</label>
+                        <label class="textarea">
+                            <i class="icon-append icon-comment"></i>
+                            <textarea rows="4" name="message" id="message" placeholder="Write a Breif on Service Request" /></textarea>
+                        </label>
+                    </section>
+                    <section>
+                        <label>
+                            <input type="checkbox" name="copy" id="copy" required />
+                            I need services from tnteacherstrust.org
+                        </label>
+                    </section>
+                </fieldset>
+                <footer>
+                    <button type="submit" name="smt_vas" class="button">Submit Request</button>
+                </footer>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="clearfix margin_top5"></div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+@section allotement_scripts
+{
+	<script src="~/Content/assets/js/jquery.sumoselect.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			window.asd = $('.SlectBox').SumoSelect({ csvDispCount: 3 });
+		});
+	</script>
+<!-- tabs -->
+<script src="~/Content/assets/js/tabs//assets/js/responsive-tabs.min.js" type="text/javascript"></script>
+
+<!-- jquery jcarousel -->
+<!-- <script type="text/javascript">
+	jQuery(document).ready(function() {
+			jQuery('#mycarouselthree').jcarousel();
+	});
+</script> -->
+
+<!-- accordion -->
+<script type="text/javascript" src="~/Content/assets/js/accordion/custom.js"></script>
+
+<script type="text/javascript">
+		
+	$(function() {
+		$("#vas-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{
+					required: true
+				},
+				mobile_number:
+				{
+					required: true,
+					minlength: 10,
+					digits: true
+				},
+				email:
+				{
+					required: true,
+					email: true
+				},
+				message:
+				{
+					required: true,
+					minlength: 10
+				},
+				copy:
+				{
+					required: true
+				}
+			}
+		});
+		
+		
+		// Validation
+		$("#sky-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{
+					required: true
+				},
+				email:
+				{
+					required: true,
+					email: true
+				},
+				message:
+				{
+					required: true,
+					minlength: 10
+				}
+			},
+								
+			// Messages for form validation
+			messages:
+			{
+				name:
+				{
+					required: 'Please enter your name',
+				},
+				email:
+				{
+					required: 'Please enter your email address',
+					email: 'Please enter a VALID email address'
+				},
+				message:
+				{
+					required: 'Please enter your message'
+				}
+			}
+		});
+		
+		// Validation		
+		$("#enquiryform").validate({					
+			// Rules for form validation
+			rules:
+			{
+				name:
+				{ required: true },
+				phone:
+				{	required: true,
+					minlength: 10
+				},
+				email:
+				{ required: true,
+					email:true
+				},
+				message:
+				{	required: true
+				}
+			},
+			
+			// Messages for form validation
+			messages:
+			{
+				name:
+				{ required: 'Please enter your name' },
+				email:
+				{	required: 'Please enter your email address',
+					email: 'Please enter a VALID email address'
+				},
+				phone:
+				{	required: 'Please enter your phone number',
+					minlength: 'Please enter at least 10 digits'
+				},
+				message:
+				{	required: 'Please enter your message' }
+			}
+		});
+		// Validation
+		$("#apply-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				projectId: {required: true},
+				siteVist:{required: true},
+				interestedIn:{required: true},
+				investRange:{required: true},
+				timeDuration:{required: true},	
+				institution:{required: true},	
+				loan_support:{required: true},
+				comments:
+				{
+					required: true,
+					minlength: 10
+				},
+				applicantName:
+				{
+					required: true,
+					minlength: 3
+				},
+				address:
+				{
+					required: true,
+					minlength: 3
+				},
+				cityName:
+				{
+					required: true,
+					minlength: 3
+				},
+				stateName:
+				{
+					required: true,
+					minlength: 3
+				},
+				countryName:
+				{
+					required: true,
+					minlength: 3
+				},
+				pinCode:
+				{
+					required: true,
+					minlength: 5,
+					digits:true
+				},	
+				phone:
+				{
+					required: true,
+					minlength: 10,
+					digits:true
+				},				
+				email:
+				{
+					required: true,
+					email: true
+				}
+			}
+		});
+
+		// Validation
+		$("#jv-form").validate(
+		{					
+			// Rules for form validation
+			rules:
+			{
+				ownerName: {
+					required: true,
+					minlength:3
+				},
+				mediatorName:{
+					required: true,
+					minlength:3
+				},
+				mobileNumber:{
+					required: true,
+					minlength:10
+				},
+				areaName:{
+					required: true,
+					minlength:3
+				},
+				propertySize:{required: true},	
+				address:{
+					required: true,
+					minlength:5
+				},	
+				frontAge:{required: true},
+				roadWidth:{required: true},
+				roadFacingDirections:{required: true},
+				intesteredJV:{required: true},
+				expectedRation:{required: true},
+				askingPrice:{required: true},
+				selMetrics:{required: true},
+				comments:
+				{
+					required: true,
+					minlength: 10
+				},
+				propInterested:{required: true}
+			}
+		});
+	});			
+</script>
+}

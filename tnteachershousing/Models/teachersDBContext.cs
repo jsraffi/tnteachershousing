@@ -16,6 +16,8 @@ namespace tnteachershousing.Models
         }
 
         public DbSet<galleryImage> gallleryImages { get; set; }
+        public DbSet<ProjectType> ProjectTypes { get; set; }
+        public DbSet<Project> Projects { get; set; }
 
     }
 }

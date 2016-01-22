@@ -20,7 +20,7 @@
                             <li>@Html.ActionLink("Home", "index", "Home")</li>
                             <li><a href="@Url.Action("sitemap","Information")">Sitemap</a></li>
                             <li><a href="@Url.Action("Contact","Information")">Contact</a></li>
-                            <li><a href="#">Login</a></li>
+                            <li><a href="@Url.Action("Login","Account" ,new { @returnUrl="/Admin/Index" })">Login</a></li>
                         </ul>
                     </div>
                     <!-- Menu -->

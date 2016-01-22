@@ -1,0 +1,119 @@
+﻿body {
+    /*padding-top: 50px;
+    padding-bottom: 20px;*/
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+label{
+    width:400px;
+}
+/*
+.form-horizontal .control-label{
+   text-align:left !important;
+   vertical-align:middle; 
+}
+input[type=checkbox]
+{
+    height:25px!important;
+}
+
+.form-horizontal .form-control
+{
+    text-align:left !important;
+    font-size:25px; 
+    height:50px;
+}
+*{
+    font-size:20px;
+   
+}
+input textarea{
+    font-size:25px;
+}
+*/
+
+.borderforcheckbox
+{
+    border:1px solid black;
+    
+}
+
+.header1 {
+		position:fixed;		top:0px;		z-index:9999;		width:100%;
+		display:block;
+	}
+
+	/*.logo {
+		float: left;
+		height: 83px;
+		line-height: 83px;
+		margin: 10px 0px;
+		padding: 0;
+		text-shadow: none;
+	}
+        */
+	.topbar a {
+		color:#ffffff !important;
+	}
+    .tnav ul li:first-child a{ border:none;}
+    .tnav{ float:right; width:100%; margin-top:25px;}
+    .tnav ul{ float:right; margin:0px; padding:0px;}
+    .tnav ul li{list-style:none; float:left; margin-left:10px;}
+    .tnav ul li a{ color:#fff; font-family:Helvetica;font-size:12px;border-left:1px solid #fff;  padding-left:10px;}
+    
+    
+
+#trueHeader {
+	background: #023267;
+}
+#logoutForm
+{
+    display:inline!important;
+}
+#logoutForm li a
+{
+    color:white;
+    margin-right:2em;
+   
+    
+}
+#logoutForm li
+{
+    padding-top:15px;
+}
+html {
+  overflow-y: scroll;
+}
+.treeview
+{
+   font-size:1.3em;
+}
+.treeview-menu li > a
+{
+    font-size:1em !important;
+}
+.fontadmin
+{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+.table-bordered > thead > tr > th,
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > thead > tr > td,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+  border: 1px solid #f4f4f4;
+}

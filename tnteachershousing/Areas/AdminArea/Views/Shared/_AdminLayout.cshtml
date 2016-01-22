@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title - Teachers housing trust pvt Ltd</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Teachers housing trust pvt ltd">
+    <meta name="author" content="Teachers housing trust pvt ltd">
+    <link rel="shortcut icon" href="~/Content/images/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    
+    <title>@ViewBag.Title - Teachers housing trust pvt ltd</title>
+    @Styles.Render("~/Content/styleadmin")
+    
+    
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    
+    <div class="wrapper">
+
+        <!-- Main Header -->
+        @Html.Partial("headeradmin")
+        <!-- Left side column. contains the logo and sidebar -->
+        @Html.Partial("navigationsidebaradmin")
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <h1>@ViewBag.PageHeader</h1>
+            </section>
+            <!-- Main content -->
+            <section class="content">
+                <!-- Your Page Content Here -->
+                 @RenderBody()   
+            </section><!-- /.content -->
+        </div><!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        @Html.Partial("footeradmin")
+
+    </div>
+    
+    @Scripts.Render("~/bundles/javascript")
+    @RenderSection("scripts", required: false)   
+</body>
+</html>

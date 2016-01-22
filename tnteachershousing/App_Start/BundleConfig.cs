@@ -25,6 +25,7 @@ namespace tnteachershousing
 
             bundles.Add(new StyleBundle("~/Content/styles").Include(
                       "~/Content/assets/css/bootstrap.css",
+                      "~/Content/assets/css/bootstrapValign.css",
                       "~/Content/assets/css/Site.css",
                       "~/Content/assets/css/style.css",
                       "~/Content/assets/css/font-awesome.css"));
@@ -33,6 +34,20 @@ namespace tnteachershousing
                         "~/Content/assets/js/mainmenu/sticky.css",
                         "~/Content/assets/js/mainmenu/bootstrap.css",
                         "~/Content/assets/js/mainmenu/fhmm.css"));
+
+            bundles.Add(new StyleBundle("~/Content/styleadmin").Include(
+                        "~/Content/Admin/css/bootstrap.css",
+                        "~/Content/Admin/css/AdminLTE.css",
+                        "~/Content/Admin/css/skin-blue.css",
+                        "~/Content/Admin/css/font-awesome.min.css",
+                        "~/Content/Admin/css/Site.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/javascript").Include(
+                      "~/Scripts/jQuery-2.1.4.min.js",
+                      "~/Scripts/bootstrap.js",
+                      "~/Scripts/app.js",
+                      "~/Scripts/respond.js"));
+
         }
     }
 }

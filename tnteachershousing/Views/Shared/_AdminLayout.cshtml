@@ -9,7 +9,8 @@
     <meta name="author" content="Teachers housing trust pvt ltd">
     <link rel="shortcut icon" href="~/Content/images/favicon.png" type="image/x-icon">
 
-    
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
+
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
@@ -30,21 +31,21 @@
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>@ViewBag.PageHeader</h1>
-            </section>
             <!-- Main content -->
-            <section class="content">
+            <section class="content" id="pagedisplay">
                 <!-- Your Page Content Here -->
                  @RenderBody()   
             </section><!-- /.content -->
         </div><!-- /.content-wrapper -->
         <!-- Main Footer -->
+        <div style="clear:both"></div>
         @Html.Partial("footeradmin")
 
     </div>
     
     @Scripts.Render("~/bundles/javascript")
-    @RenderSection("scripts", required: false)   
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript" src="~/Scripts/thtAjax.js"></script>   
 </body>
 </html>

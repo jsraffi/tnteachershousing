@@ -1,6 +1,9 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
-{
+{   
+    <li style="color:white">
+        <a href="@Url.Action("index","Admin")">Administration Home</a>
+    </li>
     <li style="color:white">
         <a>Hello @User.Identity.GetUserName()!</a>
     </li>

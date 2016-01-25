@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -173,12 +177,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\AdminArea\AdminAreaAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -186,9 +190,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\ServiceController.cs" />
-    <Compile Include="EFPoco\Project.cs" />
-    <Compile Include="EFPoco\ProjectType.cs" />
-    <Compile Include="EFPoco\tnhousing.cs" />
+    <Compile Include="EFPoco\ProjectIndex.cs" />
+    <Compile Include="EFPoco\TnHousing.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,6 +199,7 @@
     <Compile Include="Models\galleryImage.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="ViewModel\ProjectIndexViewModel.cs" />
     <Compile Include="ViewModel\ProjectViewModel.cs" />
     <Compile Include="Models\ProjectType.cs" />
     <Compile Include="Models\teachersDBContext.cs" />
@@ -211,9 +215,11 @@
     <Content Include="Content\Admin\css\bootstrap.min.css" />
     <Content Include="Content\Admin\css\font-awesome.css" />
     <Content Include="Content\Admin\css\font-awesome.min.css" />
+    <Content Include="Content\Admin\css\reset.css" />
     <Content Include="Content\Admin\css\Site.css" />
     <Content Include="Content\Admin\css\skin-blue.css" />
     <Content Include="Content\Admin\css\skin-blue.min.css" />
+    <Content Include="Content\Admin\fonts\oswald-regular-webfont.svg" />
     <Content Include="Content\Admin\images\logoadmin.png" />
     <Content Include="Content\assets\css\bootstrapValign.css" />
     <Content Include="Content\assets\css\custom.html" />
@@ -544,18 +550,17 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Admin\css\bootstrap.css.map" />
-    <Content Include="Areas\AdminArea\Views\web.config" />
-    <Content Include="Areas\AdminArea\Views\Shared\_AdminLayout.cshtml" />
-    <Content Include="Areas\AdminArea\Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Areas\AdminArea\Views\Shared\Error.cshtml" />
-    <Content Include="Areas\AdminArea\Views\Shared\footeradmin.cshtml" />
-    <Content Include="Areas\AdminArea\Views\Shared\headeradmin.cshtml" />
-    <Content Include="Areas\AdminArea\Views\Shared\navigationsidebaradmin.cshtml" />
+    <Content Include="Content\Admin\fonts\oswald-regular-webfont.eot" />
+    <Content Include="Content\Admin\fonts\oswald-regular-webfont.ttf" />
+    <Content Include="Content\Admin\fonts\oswald-regular-webfont.woff" />
+    <Content Include="Content\Admin\fonts\oswald-regular-webfont.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jQuery-2.1.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -564,11 +569,13 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Scripts\thtAjax.js" />
     <Content Include="Views\Home\Scripts\bootstrap.js" />
     <Content Include="Views\Home\Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\ProjectIndex.cshtml" />
+    <Content Include="Views\Admin\CreateProject.cshtml" />
     <None Include="Views\Home\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Views\Home\Scripts\jquery-1.10.2.js" />
     <Content Include="Views\Home\Scripts\jquery-1.10.2.min.js" />
@@ -685,11 +692,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\AdminArea\Controllers\" />
-    <Folder Include="Areas\AdminArea\Models\" />
-    <Folder Include="Content\Admin\fonts\" />
     <Folder Include="Content\Admin\less\" />
     <Folder Include="Content\Admin\scss\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

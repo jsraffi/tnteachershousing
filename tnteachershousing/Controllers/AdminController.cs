@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using tnteachershousing.Models;
+using tnteachershousing.ViewModel;
+using AutoMapper;
+
 
 namespace tnteachershousing.Controllers
 {
@@ -18,8 +21,41 @@ namespace tnteachershousing.Controllers
         }
         public ActionResult ProjectIndex()
         {
-            var projectlist = db.Projects.AsNoTracking().OrderBy(p => p.ProjectID);
+            var projectlist = db.ProjectIndexes.AsNoTracking().OrderBy(p => p.ProjectID);
             return View(projectlist);
+        }
+
+        [HttpGet]
+        public ActionResult CreateProject()
+        {
+            ViewBag.ProjectTypeRefID = new SelectList(db.ProjectTypes.AsNoTracking().Select(c => new { c.ProjectTypeID, c.ProjectTypeName }), "ProjectTypeID", "ProjectTypeName");
+            return View();
+        }
+        [HttpPost]
+        public ActionResult CreateProject(ProjectViewModel projectviewmodel)
+        {
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    projectviewmodel.CreationDate = DateTime.Now;
+                    Project projectmodel = Mapper.Map<Project>(projectviewmodel);
+                    db.Projects.Add(projectmodel);
+                    db.SaveChanges();
+                    return RedirectToAction("ProjectIndex");
+                }
+                else
+                {
+                    ViewBag.ProjectTypeRefID = new SelectList(db.ProjectTypes.AsNoTracking().Select(c => new { c.ProjectTypeID, c.ProjectTypeName }), "ProjectTypeID", "ProjectTypeName", projectviewmodel.ProjectTypeRefID);
+                    return View();
+                }
+
+            }
+            catch (Exception e)
+            {
+                ViewBag.ProjectTypeRefID = new SelectList(db.ProjectTypes.AsNoTracking().Select(c => new { c.ProjectTypeID, c.ProjectTypeName }), "ProjectTypeID", "ProjectTypeName",projectviewmodel.ProjectTypeRefID);
+                return View();
+            }
         }
         // GET: Admin/Details/5
         public ActionResult Details(int id)

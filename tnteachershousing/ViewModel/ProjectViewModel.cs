@@ -4,14 +4,14 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace tnteachershousing.Models
+namespace tnteachershousing.ViewModel
 {   
     
     public class ProjectViewModel
     {
         public ProjectViewModel()
         {
-            this.ProjectTypeDD = new List<ProjectType>();
+            this.ProjectTypeDD = new List<ProjectTypeViewModel>();
         }
 
         public int ProjectID { get; set; }
@@ -35,11 +35,14 @@ namespace tnteachershousing.Models
 
         public double? Latitude { get; set; }
 
+        [Display(Name ="Project Type")]
         [Required(ErrorMessage ="Please select project type")]
-        public int ProjectType { get; set; }
+        public int ProjectTypeRefID { get; set; }
 
         public DateTime CreationDate { get; set; } = DateTime.Now;
 
-        public virtual IList<ProjectType> ProjectTypeDD { get; set; }
+        [Display(Name ="Project status")]
+        public Boolean ProjectStatus { get; set; }
+        public virtual IList<ProjectTypeViewModel> ProjectTypeDD { get; set; }
     }
 }

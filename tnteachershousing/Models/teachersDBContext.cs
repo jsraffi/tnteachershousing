@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-
+using tnteachershousing.ViewModel;
 namespace tnteachershousing.Models
 {
     public class techearDBContext : DbContext
@@ -18,6 +18,7 @@ namespace tnteachershousing.Models
         public DbSet<galleryImage> gallleryImages { get; set; }
         public DbSet<ProjectType> ProjectTypes { get; set; }
         public DbSet<Project> Projects { get; set; }
+        public virtual DbSet<ProjectIndexViewModel> ProjectIndexes { get; set; }
 
     }
 }

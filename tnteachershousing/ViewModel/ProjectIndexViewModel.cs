@@ -1,43 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations.Schema;
-namespace tnteachershousing.Models
-{   
-    [Table("Projects")]
-    public class Project
-    {
 
-        [Key, Column(Order = 0)]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+namespace tnteachershousing.ViewModel
+{
+    [Table("ProjectIndex")]
+    public class ProjectIndexViewModel
+    {
+        [Key]
         public int ProjectID { get; set; }
 
-        
+        [Display(Name ="Project Name")]
         public string ProjectName { get; set; }
-        
+
+
+        [Display(Name = "Main Street")]
         public string Address1 { get; set; }
 
+        [Display(Name ="Area")]
         public string Address2 { get; set; }
-        
+
         public string Pincode { get; set; }
-        
+
         public string City { get; set; }
 
         public double? Longitude { get; set; }
 
         public double? Latitude { get; set; }
 
-        
-        [ForeignKey("ProjectTypes")]
-        public int ProjectTypeRefID { get; set; }
+        [Display(Name ="Project Type")]
+        public string ProjectTypeName { get; set; }
 
-        
+        [Display(Name ="Date created")]
         public DateTime CreationDate { get; set; }
-
-        public Boolean ProjectStatus { get; set; }
-
-        public virtual ProjectType ProjectTypes { get; set; }
+        
+        [Display(Name ="Project Status")]
+        public bool ProjectStatus { get; set; }
     }
 }

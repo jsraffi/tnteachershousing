@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace tnteachershousing.Models
+namespace tnteachershousing.ViewModel
 {   
     
     public class ProjectTypeViewModel

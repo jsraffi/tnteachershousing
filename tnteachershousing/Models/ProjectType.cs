@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace tnteachershousing.Models
 {   
-    [Table("ProjectType")]
+    [Table("ProjectTypes")]
     public class ProjectType
     {
         [Key, Column(Order = 0)]

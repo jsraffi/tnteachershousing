@@ -5,21 +5,17 @@ namespace tnteachershousing.EFPoco
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class tnhousing : DbContext
+    public partial class TnHousing : DbContext
     {
-        public tnhousing()
-            : base("name=tnhousing")
+        public TnHousing()
+            : base("name=TnHousing")
         {
         }
 
-        public virtual DbSet<Project> Projects { get; set; }
-        public virtual DbSet<ProjectType> ProjectTypes { get; set; }
+        public virtual DbSet<ProjectIndex> ProjectIndexes { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ProjectType>()
-                .HasOptional(e => e.Project)
-                .WithRequired(e => e.ProjectType1);
         }
     }
 }

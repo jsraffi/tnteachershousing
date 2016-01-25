@@ -4,6 +4,30 @@
 }
 
 /* Set padding to keep content from hitting the edges */
+@font-face {
+    font-family: 'oswaldlight';
+    src: url('../fonts/oswald-light-webfont.eot');
+    src: url('../fonts/oswald-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald-light-webfont.woff2') format('woff2'),
+         url('../fonts/oswald-light-webfont.woff') format('woff'),
+         url('../fonts/oswald-light-webfont.ttf') format('truetype'),
+         url('../fonts/oswald-light-webfont.svg#oswaldlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'oswald_regular';
+    src: url('../fonts/oswald-regular-webfont.eot');
+    src: url('../fonts/oswald-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/oswald-regular-webfont.woff2') format('woff2'),
+         url('../fonts/oswald-regular-webfont.woff') format('woff'),
+         url('../fonts/oswald-regular-webfont.ttf') format('truetype'),
+         url('../fonts/oswald-regular-webfont.svg#oswald_regularregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
@@ -51,10 +75,14 @@ input textarea{
     
 }
 
-.header1 {
-		position:fixed;		top:0px;		z-index:9999;		width:100%;
-		display:block;
-	}
+.header1
+ {
+    position:fixed;		
+    top:0px;		
+    z-index:9999;		
+    width:100%;
+    display:block;
+}
 
 	/*.logo {
 		float: left;
@@ -96,6 +124,7 @@ input textarea{
 }
 html {
   overflow-y: scroll;
+ 
 }
 .treeview
 {
@@ -105,15 +134,73 @@ html {
 {
     font-size:1em !important;
 }
-.fontadmin
-{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
 .table-bordered > thead > tr > th,
 .table-bordered > tbody > tr > th,
 .table-bordered > tfoot > tr > th,
 .table-bordered > thead > tr > td,
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
-  border: 1px solid #f4f4f4;
+  border: 1px solid orangered;
+}
+
+.fontadmin
+{
+    font-family:'oswald_regular'!important;
+}
+.fontadmintable
+{
+    font-family:'oswald_regular'!important;
+    font-size:0.8em;
+}
+.fontadminheader
+{
+    font-family:'oswald_regular'!important;
+    font-size:3em;
+}
+body
+{
+    font-family:'oswald_regular'!important;
+}
+.form-horizontal
+{
+    font-size:1.1em;
+}
+
+.form-horizontal input,select
+{
+    font-size:1.3em !important;
+    font-family:'oswald_regular';
+    border-color:blue !important;
+}
+.content-wrapper,
+.right-side {
+  min-height: 100%!important;
+  float:left;
+  
+}
+.content
+{  height:auto;
+   float:left;
+   width:100em;
+   min-height:40em;
+}
+
+.formheader
+{
+    font-family:oswald_regular;
+    font-size:1em;
+}
+.pageheader
+{
+    font-family:oswald_regular!important;
+    font-size:1.5em !important;
+    margin-top: 0.2em !important;
+    margin-bottom:0.5em!important;
+}
+.form-horizontal .form-checkbox 
+{
+    height:25px;
+    width:25px;
+    border-color:blue !important;
+
 }

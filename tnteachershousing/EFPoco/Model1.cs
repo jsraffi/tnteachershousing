@@ -5,17 +5,20 @@ namespace tnteachershousing.EFPoco
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class TnHousing : DbContext
+    public partial class Model1 : DbContext
     {
-        public TnHousing()
-            : base("name=TnHousing")
+        public Model1()
+            : base("name=Model1")
         {
         }
 
-        public virtual DbSet<ProjectIndex> ProjectIndexes { get; set; }
+        public virtual DbSet<Receipt> Receipts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Receipt>()
+                .Property(e => e.CustomerRefID)
+                .IsUnicode(false);
         }
     }
 }

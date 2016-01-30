@@ -19,6 +19,12 @@ namespace tnteachershousing.Models
         public DbSet<ProjectType> ProjectTypes { get; set; }
         public DbSet<Project> Projects { get; set; }
         public virtual DbSet<ProjectIndexViewModel> ProjectIndexes { get; set; }
+        public DbSet<CustomerApplicationForm> CustomerApplicationForms { get; set; }
+        public DbSet<InvestmentRange> InvestmentRange { get; set; }
+        public DbSet<CustomerIndexViewModel> CustomerIndexes { get; set; }
+        public DbSet<CustApplicationReport> CustApplicationReports { get; set; }
+        public DbSet<ReceiptsAppList> ReceiptsAppLists { get; set; }
+
 
     }
 }

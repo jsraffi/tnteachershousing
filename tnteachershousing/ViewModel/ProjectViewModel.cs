@@ -14,6 +14,7 @@ namespace tnteachershousing.ViewModel
             this.ProjectTypeDD = new List<ProjectTypeViewModel>();
         }
 
+        [Key]
         public int ProjectID { get; set; }
 
         [Required(ErrorMessage ="Please enter a project name")]

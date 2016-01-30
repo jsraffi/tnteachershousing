@@ -14,7 +14,9 @@ namespace tnteachershousing
         {
             AutoMapper.Mapper.CreateMap<Project, ProjectViewModel>();
             AutoMapper.Mapper.CreateMap<Project, ProjectViewModel>().ReverseMap();
-            
+
+            AutoMapper.Mapper.CreateMap<CustomerApplicationForm, CustomerApplicationFormViewModel>();
+            AutoMapper.Mapper.CreateMap<CustomerApplicationForm, CustomerApplicationFormViewModel>().ReverseMap();
         }
     }
 }

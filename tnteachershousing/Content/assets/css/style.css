@@ -304,7 +304,7 @@ position: relative;
 
 .colored-text { color: #BC6882; }
 
-.text-danger { color: #D74A46 !important }
+.text-danger { color: #D74A46 !important;text-align:left }
 
 .text-wanring { color: #F0AD4E !important }
 

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<tnteachershousing.Models.ReceiptsAppList>
+@using PagedList;
+@using PagedList.Mvc;
+
+
+@{
+    ViewBag.Title = "Receipts generation list";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
+<h1 class="pageheader">Customer list to add Reciepts</h1>
+
+<div class="container col-md-10">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover fontadmintable">
+            <tr style="background-color:lightblue;">
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NameOfapplicant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </th>
+                <th>Add Receipt</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameOfapplicant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate,"ShortDateTime")
+                    </td>
+
+                    <td>
+                        @Html.ActionLink("Add Reciepts", "CreateReceipts", new { id = item.CustomerID }) 
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("CustListReceipts", new { page }))
+</div>

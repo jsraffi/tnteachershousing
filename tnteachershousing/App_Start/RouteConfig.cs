@@ -12,11 +12,22 @@ namespace tnteachershousing
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            
+
+            routes.MapRoute(
+                name: "Applciation",
+                url: "{controller}/{action}/{applicationid}",
+                defaults: new { controller = "Admin", action = "Index"}
+            );
+            routes.MapRoute(
+                name: "Project",
+                url: "{controller}/{action}/{projectid}",
+                defaults: new { controller = "Admin", action = "Index"}
+            );
+
             routes.MapRoute(
                 name: "allotment",
                 url: "{controller}/{action}/{productname}/{id}",
-                defaults: new { controller = "Home", action = "Index", productname = UrlParameter.Optional, id = UrlParameter.Optional }
+                defaults: new { controller = "Project", action = "Index"}
             );
             routes.MapRoute(
                 name: "Default",

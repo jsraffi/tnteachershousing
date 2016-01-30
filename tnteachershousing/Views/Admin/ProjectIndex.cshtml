@@ -82,10 +82,10 @@
                     @Html.DisplayFor(modelItem => item.CreationDate, "ShortDateTime")
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.ProjectID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.ProjectID })
-                </td>
+                    @*@Html.ActionLink("Edit","EditProject", new { projectid = item.ProjectID})*@
+                    <a href="#" id="editproject" title="@item.ProjectID">Edit</a>
+                   
+               </td>
             </tr>
         }
 

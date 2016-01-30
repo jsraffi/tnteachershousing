@@ -1,0 +1,85 @@
+﻿@model IEnumerable<tnteachershousing.ViewModel.CustomerIndexViewModel>
+
+@{
+    ViewBag.Title = "Customer Index";
+    //Layout = null;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="pageheader">Customer List</h1>
+
+
+<div class="container col-md-10">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover fontadmintable">
+            <tr style="background-color:lightblue;">
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NameOfapplicant)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Country)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectTypeName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.InvestmentRangeValue)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </th>
+                <th>View Application</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameOfapplicant)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Country)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProjectTypeName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.InvestmentRangeValue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate,"ShortDateTime")
+                    </td>
+                    <td>
+                        @Html.ActionLink("View Application", "ViewApplication","Admin",new { applicationid = item.ApplicationID},null)
+                    </td>
+                </tr>
+                
+            }
+
+        </table>
+        </div>
+    </div>

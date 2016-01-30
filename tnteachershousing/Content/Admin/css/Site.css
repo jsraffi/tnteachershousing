@@ -122,10 +122,12 @@ input textarea{
 {
     padding-top:15px;
 }
-html {
-  overflow-y: scroll;
- 
+.wrapper
+{
+    height:100vh;
 }
+
+
 .treeview
 {
    font-size:1.3em;
@@ -150,7 +152,7 @@ html {
 .fontadmintable
 {
     font-family:'oswald_regular'!important;
-    font-size:0.8em;
+    font-size:1.1em;
 }
 .fontadminheader
 {
@@ -165,30 +167,45 @@ body
 {
     font-size:1.1em;
 }
-
+.form-horizontal 
+{
+    width :95%;
+}
 .form-horizontal input,select
 {
     font-size:1.3em !important;
     font-family:'oswald_regular';
     border-color:blue !important;
 }
+.form-horizontal .control-label{
+   
+   font-family:'oswald_regular';
+   font-size:1.2em;
+}
+
 .content-wrapper,
 .right-side {
-  min-height: 100%!important;
-  float:left;
+  
+  float:left; 
   
 }
 .content
-{  height:auto;
+{  height:100%;
    float:left;
-   width:100em;
-   min-height:40em;
+   min-width:100vw;
+   
+   
+}
+.wrapper
+{
+    min-height:100vh;
+    height:100%;
 }
 
 .formheader
 {
     font-family:oswald_regular;
-    font-size:1em;
+    font-size:2em !important;
 }
 .pageheader
 {
@@ -203,4 +220,9 @@ body
     width:25px;
     border-color:blue !important;
 
+}
+.datepicker
+{
+    font-size:1.5em !important;
+    border:1px solid blue !important;
 }

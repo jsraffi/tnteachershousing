@@ -16,6 +16,9 @@ namespace tnteachershousing
                         "~/Scripts/jquery.validate*",
                          "~/Scripts/jquery.validate.unobtrusive.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryvalnoajax").Include(
+                         "~/Scripts/jquery.validate*"));
+
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -43,13 +46,27 @@ namespace tnteachershousing
                         "~/Content/Admin/css/AdminLTE.css",
                         "~/Content/Admin/css/skin-blue.css",
                         "~/Content/Admin/css/font-awesome.min.css",
-                        "~/Content/Admin/css/Site.css"));
+                        "~/Content/Admin/css/Site.css",
+                        "~/Content/bootstrap-datepicker3.css"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/javascript").Include(
                       "~/Scripts/jQuery-2.1.4.min.js",
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/app.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js"
+                      ));
+
+            bundles.Add(new ScriptBundle("~/bundles/datepicker").Include(
+                        "~/Scripts/bootstrap-datepicker.js"
+                      ));
+
+            bundles.Add(new ScriptBundle("~/bundles/globalize").Include(
+                    "~/Scripts/globalize/globalize.js",
+                    "~/Scripts/globalize/cultures/globalize.culture.en-GB.js",
+                    "~/Scripts/jquery.date.validation.js"
+                    ));
+
 
         }
     }

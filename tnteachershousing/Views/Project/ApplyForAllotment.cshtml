@@ -111,7 +111,7 @@ input[type=checkbox]
                 <h3 class="box-title">Application Form</h3>
             </div><!-- /.box-header -->
 
-            @using (Html.BeginForm("ApplyForAllotment", "Project", FormMethod.Post, new { @class = "form-horizontal formsize", role = "form" }))
+            @using (Html.BeginForm("ApplyForAllotment", "Project", FormMethod.Post, new { @class = "form-horizontal formsize", role = "form", autocomplete ="off" }))
             {
                 @Html.AntiForgeryToken()
 

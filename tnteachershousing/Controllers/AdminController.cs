@@ -14,7 +14,7 @@ using CrystalDecisions.Shared;
 using Microsoft.AspNet.Identity;
 using System.Configuration;
 using PagedList;
-
+using CrystalDecisions.ReportAppServer.DataDefModel;
 
 namespace tnteachershousing.Controllers
 {
@@ -165,9 +165,104 @@ namespace tnteachershousing.Controllers
 
         [HttpPost]
         public ActionResult CreateReceipts(ReceiptsViewModel receiptsviewmodel)
-        {
-            return View();
+        {   
+            try
+            {
+                if(ModelState.IsValid)
+                {
+                    var appid = db.CustomerApplicationForms.AsNoTracking().Where(c => c.CustomerID == receiptsviewmodel.CustomerRefID).Select(a => a.ApplicationID).FirstOrDefault();
+                    
+                    Receipts receipts = Mapper.Map<Receipts>(receiptsviewmodel);
+                    receipts.ApplicationRefID = appid;
+                    db.Receipts.Add(receipts);
+                    db.SaveChanges();
+
+                    return RedirectToAction("ShowReceipts", "Admin", new { applicationid = receipts.ReceiptID});
+                    
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch(Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+                return View();
+            }
+            
         }
+        public ActionResult ReceiptsIndex()
+        {
+            var receipts = db.Receipts.AsNoTracking().OrderByDescending(d => d.CreationDate);
+            IEnumerable<ReceiptsViewModel> receiptsviewmodel = Mapper.DynamicMap<IEnumerable<ReceiptsViewModel>>(receipts);
+            return View(receiptsviewmodel);
+        }
+
+        public ActionResult ShowReceipts(long applicationid)
+        {
+            ReportDocument receiptreport = new ReportDocument();
+            var httpctx = System.Web.HttpContext.Current;
+            receiptreport.Load(httpctx.Server.MapPath("~/Reports/Receipt.rpt"));
+
+            receiptreport.PrintOptions.PaperSize = PaperSize.PaperA4;
+            receiptreport.SetParameterValue("ReceiptID", applicationid);
+
+            return File(genericReportSetting(receiptreport, httpctx), "application/pdf");
+
+
+        }
+
+        private Stream genericReportSetting(ReportDocument report, HttpContext httpctx)
+        {   
+           
+            PropertyBag connectionAttributes = new PropertyBag();
+            connectionAttributes.Add("Auto Translate", "-1");
+            connectionAttributes.Add("Connect Timeout", "15");
+            connectionAttributes.Add("Data Source", ConfigurationManager.AppSettings["Server"]);
+            connectionAttributes.Add("General Timeout", "0");
+            connectionAttributes.Add("Initial Catalog", ConfigurationManager.AppSettings["Database"]);
+            connectionAttributes.Add("Integrated Security", false);
+            connectionAttributes.Add("Locale Identifier", "1040");
+            connectionAttributes.Add("OLE DB Services", "-5");
+            connectionAttributes.Add("Provider", "SQLOLEDB");
+            connectionAttributes.Add("Tag with column collation when possible", "0");
+            connectionAttributes.Add("Use DSN Default Properties", false);
+            connectionAttributes.Add("Use Encryption for Data", "0");
+            
+            PropertyBag attributes = new PropertyBag();
+            attributes.Add("Database DLL", "crdb_ado.dll");
+            attributes.Add("QE_DatabaseName", ConfigurationManager.AppSettings["Database"]);
+            attributes.Add("QE_DatabaseType", "OLE DB (ADO)");
+            attributes.Add("QE_LogonProperties", connectionAttributes);
+            attributes.Add("QE_ServerDescription", httpctx.Server);
+            attributes.Add("QESQLDB", true);
+            attributes.Add("SSO Enabled", false);
+
+            CrystalDecisions.ReportAppServer.DataDefModel.ConnectionInfo ci = new CrystalDecisions.ReportAppServer.DataDefModel.ConnectionInfo();
+            ci.Attributes = attributes;
+            ci.Kind = CrConnectionInfoKindEnum.crConnectionInfoKindCRQE;
+            ci.UserName = ConfigurationManager.AppSettings["UserID"];
+            ci.Password = ConfigurationManager.AppSettings["Password"];
+
+            foreach (CrystalDecisions.ReportAppServer.DataDefModel.Table table in report.ReportClientDocument.DatabaseController.Database.Tables)
+            {
+                CrystalDecisions.ReportAppServer.DataDefModel.Procedure newTable = new CrystalDecisions.ReportAppServer.DataDefModel.Procedure();
+
+                newTable.ConnectionInfo = ci;
+                newTable.Name = table.Name;
+                newTable.Alias = table.Alias;
+                newTable.QualifiedName = ConfigurationManager.AppSettings["Database"] + ".dbo." + table.Name;
+                report.ReportClientDocument.DatabaseController.SetTableLocation(table, newTable);
+            }
+
+
+            Stream stream = report.ExportToStream(ExportFormatType.PortableDocFormat);
+            report.Dispose();
+            return stream;
+        }
+
 
         // GET: Admin/Details/5
         public ActionResult Details(int id)

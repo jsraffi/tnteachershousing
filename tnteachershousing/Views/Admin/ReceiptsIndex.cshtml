@@ -1,0 +1,90 @@
+﻿@model IEnumerable<tnteachershousing.ViewModel.ReceiptsViewModel>
+
+@{
+    ViewBag.Title = "Receipts Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="pageheader">Receipt List</h1>
+
+
+<div class="container col-md-10">
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover fontadmintable">
+            <tr style="background-color:lightblue;">
+                <th>
+                    @Html.DisplayNameFor(model => model.ReceiptID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerRefID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Remarks)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CashChequeDD)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChequeNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChequeDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BankName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BankBranch)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreationDate)
+                </th>
+                <th>View receipts</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelitem => item.ReceiptID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerRefID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remarks)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CashChequeDD)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChequeNumber)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChequeDate,(item.ChequeDate!= null)?"ShortDateTime":null)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BankName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BankBranch)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate,"ShortDateTime")
+                    </td>
+                    <td>
+                        @Html.ActionLink("Show Receipt", "ShowReceipts", new { applicationid = item.ReceiptID })
+                        
+                    </td>
+                </tr>
+            }
+
+        </table>
+        </div>
+    </div>

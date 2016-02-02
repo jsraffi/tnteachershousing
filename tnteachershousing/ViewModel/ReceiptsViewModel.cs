@@ -26,8 +26,9 @@ namespace tnteachershousing.ViewModel
         [Display(Name ="Cheque No")]
         public string ChequeNumber { get; set; }
 
+        [DisplayFormat(NullDisplayText ="")]
         [Display(Name ="Cheque Dated")]
-        public DateTime ChequeDate { get; set; }
+        public DateTime? ChequeDate { get; set; }
 
         [Display(Name ="Name of the bank")]
         public string BankName { get; set; }
@@ -38,8 +39,13 @@ namespace tnteachershousing.ViewModel
         [Range(1,int.MaxValue,ErrorMessage ="Please enter a positive numeric value")]
         [Required(ErrorMessage ="Please enter postive numeric value")]
         public int Amount { get; set; }
-
+        
+        [Display(Name ="Receipt Date")]
         [Required(ErrorMessage ="Please enter a date in dd/mm/yyyy format")]
         public DateTime CreationDate { get; set; }
+
+        public long ApplicaionRefID { get; set; }
+
+       
     }
 }

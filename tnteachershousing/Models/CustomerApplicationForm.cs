@@ -12,7 +12,7 @@ namespace tnteachershousing.Models
     {
         [Key, Column(Order = 0)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int ApplicationID { get; set; }
+        public long ApplicationID { get; set; }
 
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public string CustomerID { get; set; }

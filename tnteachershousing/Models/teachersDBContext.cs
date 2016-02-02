@@ -24,6 +24,7 @@ namespace tnteachershousing.Models
         public DbSet<CustomerIndexViewModel> CustomerIndexes { get; set; }
         public DbSet<CustApplicationReport> CustApplicationReports { get; set; }
         public DbSet<ReceiptsAppList> ReceiptsAppLists { get; set; }
+        public DbSet<Receipts> Receipts { get; set; }
 
 
     }

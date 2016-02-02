@@ -9,7 +9,7 @@
         <div class="box-header with-border">
             <h3 class="box-title formheader">Project Edit Form</h3>
         </div><!-- /.box-header -->
-        @using (Ajax.BeginForm("EditProject", "Admin", new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "Post", UpdateTargetId = "pagedisplay" }, new { @class = "form-horizontal", role = "form" }))
+        @using (Ajax.BeginForm("EditProject", "Admin", new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "Post", UpdateTargetId = "pagedisplay" }, new { @class = "form-horizontal", role = "form" , autocomplte="off" }))
         {
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })

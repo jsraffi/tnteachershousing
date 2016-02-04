@@ -226,3 +226,18 @@ body
     font-size:1.5em !important;
     border:1px solid blue !important;
 }
+.validation-summary-errors ul 
+{
+    margin-top:15px;
+    padding-left:25px;
+}
+.err401
+{
+    border:2px solid blue;
+    padding:15px;
+    margin-top:12%;
+}
+.err401 a
+{
+    margin:25px;
+}

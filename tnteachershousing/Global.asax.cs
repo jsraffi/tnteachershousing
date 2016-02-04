@@ -22,6 +22,8 @@ namespace tnteachershousing
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Database.SetInitializer<ApplicationDbContext>(null);
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new RazorViewEngine());
 
             AutoMapperConfig.RegisterMappings();
         }

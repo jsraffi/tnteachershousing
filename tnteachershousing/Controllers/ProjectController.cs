@@ -8,12 +8,22 @@ using tnteachershousing.ViewModel;
 using AutoMapper;
 using System.Web.UI;
 using tnteachershousing.ActionFilters;
+using tnteachershousing.Services;
+using System.Threading.Tasks;
 
 namespace tnteachershousing.Controllers
 {
     public class ProjectController : Controller
     {
         private techearDBContext db = new techearDBContext();
+
+        private IProjectServices _projectService;
+
+        public ProjectController()
+        {
+            _projectService = new ProjectServices();
+            _projectService.ModelState = this.ModelState;
+        }
         // GET: Project
         public ActionResult Index()
         {
@@ -187,41 +197,20 @@ namespace tnteachershousing.Controllers
     
         
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [NoCache]
-        public ActionResult ApplyForAllotment(CustomerApplicationFormViewModel custappviewmodel)
+        public async Task<ActionResult> ApplyForAllotment(CustomerApplicationFormViewModel custappviewmodel)
         {
             try
-            {   if (custappviewmodel.IndianResident == false && custappviewmodel.NonResidentIndian==false)
-                {
-                    ModelState.AddModelError("IndianResident", "Please select a appropriate value");
-                }
-                if(custappviewmodel.Goverment == false && custappviewmodel.NonGoverment == false)
-                {
-                    ModelState.AddModelError("Goverment", "Please select a appropriate value");
-                }
-                if(custappviewmodel.Salaried==false && custappviewmodel.Business == false && custappviewmodel.Others == false)
-                {
-                    ModelState.AddModelError("Salaried", "Please select a appropriate value");
+            {
+                _projectService.validateCustAppForm(custappviewmodel);
 
-                }
-                if(custappviewmodel.Teaching == false && custappviewmodel.NonTeaching == false && custappviewmodel.NRI == false && custappviewmodel.GeneralPublic == false)
-                {
-                    ModelState.AddModelError("Teaching", "Please select a appropriate value");
-                }
-                if(custappviewmodel.OwnPurpose == false && custappviewmodel.RentalPurpose == false)
-                {
-                    ModelState.AddModelError("OwnPurpose", "Please select a appropriate value");
-                }
-                if(custappviewmodel.BankLoan == false && custappviewmodel.OwnFund == false)
-                {
-                    ModelState.AddModelError("BankLoan", "Please select a appropriate value");
-                }
                 if (ModelState.IsValid)
                 {
                     CustomerApplicationForm custappmodel = Mapper.Map<CustomerApplicationForm>(custappviewmodel);
                     custappmodel.CreationDate = DateTime.Now;
                     db.CustomerApplicationForms.Add(custappmodel);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     TempData["CusAppSaved"] = "done";
                     return RedirectToActionPermanent("AllotmentSuccess","Project");
                 }
@@ -240,6 +229,7 @@ namespace tnteachershousing.Controllers
                 ViewBag.ProjectRefID = new SelectList(db.Projects.AsNoTracking().Select(p => new { p.ProjectID, p.ProjectName }), "ProjectID", "ProjectName", custappviewmodel.ProjectRefID);
                 ViewBag.ProjectTypeRefID = new SelectList(db.ProjectTypes.AsNoTracking().Select(c => new { c.ProjectTypeID, c.ProjectTypeName }), "ProjectTypeID", "ProjectTypeName",custappviewmodel.ProjectTypeRefID);
                 ViewBag.InvestmentRangeRefID = new SelectList(db.InvestmentRange.AsNoTracking().Select(i => new { i.InvestmentRangeID, i.InvestmentRangeValue }), "InvestmentRangeID", "InvestmentRangeValue", custappviewmodel.InvestmentRangeRefID);
+                ModelState.AddModelError("", err.Message);
                 return View();
             }
 

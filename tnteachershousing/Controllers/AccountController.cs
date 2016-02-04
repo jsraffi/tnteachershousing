@@ -9,6 +9,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using tnteachershousing.Models;
+using System.Collections;
+using System.Collections.Generic;
+using tnteachershousing.ActionFilters;
 
 namespace tnteachershousing.Controllers
 {
@@ -62,6 +65,15 @@ namespace tnteachershousing.Controllers
             private set { this._roleManager = value; }
         }
 
+        public ActionResult getAllUsers()
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+            
+            var usermodel =  db.Users.Select(u => new ListUsers{UserName = u.UserName, Email=u.Email }).ToList() ;
+           
+            
+            return View(usermodel);
+        }
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -89,7 +101,7 @@ namespace tnteachershousing.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.UserName, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -101,6 +113,7 @@ namespace tnteachershousing.Controllers
                 case SignInStatus.Failure:
                 default:
                     ModelState.AddModelError("", "Invalid login attempt.");
+                    ViewBag.ReturnUrl = returnUrl;
                     return View(model);
             }
         }
@@ -165,11 +178,11 @@ namespace tnteachershousing.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -177,7 +190,7 @@ namespace tnteachershousing.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("getAllUsers", "Account");
                 }
                 AddErrors(result);
             }

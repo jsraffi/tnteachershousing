@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<tnteachershousing.ViewModel.CustomerIndexViewModel>
-
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Customer Index";
     //Layout = null;
@@ -82,4 +83,5 @@
 
         </table>
         </div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("CustomerIndex", new { page }))
     </div>

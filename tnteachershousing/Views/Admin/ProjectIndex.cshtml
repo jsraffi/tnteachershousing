@@ -1,10 +1,11 @@
 ﻿@model IEnumerable<tnteachershousing.ViewModel.ProjectIndexViewModel>
-
+@using PagedList;
+@using PagedList.Mvc;
 @{
     //ViewBag.Title = "Project List";
-    //Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
     //ViewBag.PageHeader = "List of projects";
-    Layout = null;
+    //Layout = null;
 }
 
 
@@ -82,8 +83,8 @@
                     @Html.DisplayFor(modelItem => item.CreationDate, "ShortDateTime")
                 </td>
                 <td>
-                    @*@Html.ActionLink("Edit","EditProject", new { projectid = item.ProjectID})*@
-                    <a href="#" id="editproject" title="@item.ProjectID">Edit</a>
+                    @Html.ActionLink("Edit","EditProject", new { projectid = item.ProjectID})
+                    
                    
                </td>
             </tr>
@@ -91,5 +92,6 @@
 
     </table>
 </div>
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("ProjectIndex", new { page }))
 </div>
      

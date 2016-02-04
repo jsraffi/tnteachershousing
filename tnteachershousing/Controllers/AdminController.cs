@@ -15,15 +15,18 @@ using Microsoft.AspNet.Identity;
 using System.Configuration;
 using PagedList;
 using CrystalDecisions.ReportAppServer.DataDefModel;
+using System.Threading.Tasks;
+using tnteachershousing.ActionFilters;
 
 namespace tnteachershousing.Controllers
 {
 
-    [Authorize(Roles = "Administrator")]
+    
     public class AdminController : Controller
     {
         private techearDBContext db = new techearDBContext();
         // GET: Admin
+        [AuthorizeRedirect(Roles ="Browser , Administrator")]
         public ActionResult Index()
         {   
             if(Request.IsAuthenticated)
@@ -34,21 +37,27 @@ namespace tnteachershousing.Controllers
             
             return RedirectToAction("Login", "Account", new { @returnUrl = "/Admin/Index" });
         }
-        public ActionResult ProjectIndex()
+        [AuthorizeRedirect(Roles = "Browser, Administrator")]
+        public ActionResult ProjectIndex(int? page)
         {
+            int pageSize = Convert.ToInt32(ConfigurationManager.AppSettings["pageSize"]);
+            var pageNumber = page ?? 1;
+
             var projectlist = db.ProjectIndexes.AsNoTracking().OrderBy(p => p.ProjectID);
-            return View(projectlist);
+            return View(projectlist.ToPagedList(pageNumber,pageSize));
         }
 
+        [AuthorizeRedirect(Roles = "Administrator")]
         [HttpGet]
         public ActionResult CreateProject()
         {
             ViewBag.ProjectTypeRefID = new SelectList(db.ProjectTypes.AsNoTracking().Select(c => new { c.ProjectTypeID, c.ProjectTypeName }), "ProjectTypeID", "ProjectTypeName");
             return View();
         }
+        [AuthorizeRedirect(Roles = "Administrator")]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateProject(ProjectViewModel projectviewmodel)
+        public async Task<ActionResult> CreateProject(ProjectViewModel projectviewmodel)
         {
             try
             {
@@ -57,7 +66,7 @@ namespace tnteachershousing.Controllers
                     projectviewmodel.CreationDate = DateTime.Now;
                     Project projectmodel = Mapper.Map<Project>(projectviewmodel);
                     db.Projects.Add(projectmodel);
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     return RedirectToAction("ProjectIndex");
                 }
                 else
@@ -70,18 +79,21 @@ namespace tnteachershousing.Controllers
             catch (Exception e)
             {
                 ViewBag.ProjectTypeRefID = new SelectList(db.ProjectTypes.AsNoTracking().Select(c => new { c.ProjectTypeID, c.ProjectTypeName }), "ProjectTypeID", "ProjectTypeName",projectviewmodel.ProjectTypeRefID);
+                ModelState.AddModelError("", e.Message);
                 return View();
             }
         }
 
+        
+        [AuthorizeRedirect(Roles = "Administrator")]
         [HttpGet]
-        public ActionResult EditProject(string projectid)
+        public ActionResult EditProject(int? applicationid)
         {
-            if (projectid == null)
+            if (applicationid == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Project projectmodel = db.Projects.Find(Convert.ToInt32(projectid));
+            Project projectmodel = db.Projects.Find(Convert.ToInt32(applicationid));
             if (projectmodel == null)
             {
                 return HttpNotFound();
@@ -93,8 +105,10 @@ namespace tnteachershousing.Controllers
 
         }
 
+        [AuthorizeRedirect(Roles = "Administrator")]
         [HttpPost]
-        public ActionResult EditProject(ProjectViewModel projectviewmodel)
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> EditProject(ProjectViewModel projectviewmodel)
         {
             try
             {
@@ -102,7 +116,7 @@ namespace tnteachershousing.Controllers
                 {
                     Project projectmodel = Mapper.Map<Project>(projectviewmodel);
                     db.Entry(projectmodel).State = EntityState.Modified;
-                    db.SaveChanges();
+                    await db.SaveChangesAsync();
                     return RedirectToAction("ProjectIndex");
                 }
                 else
@@ -116,16 +130,22 @@ namespace tnteachershousing.Controllers
             catch(Exception e)
             {
                 ViewBag.ProjectTypeRefID = new SelectList(db.ProjectTypes.AsNoTracking().Select(c => new { c.ProjectTypeID, c.ProjectTypeName }), "ProjectTypeID", "ProjectTypeName", projectviewmodel.ProjectTypeRefID);
+                ModelState.AddModelError("", e.Message);
                 return View(projectviewmodel);
             }
         }
-        
-        public ActionResult CustomerIndex()
+
+        [AuthorizeRedirect(Roles = "Browser, Administrator")]
+        public ActionResult CustomerIndex(int? page)
         {
+            int pageSize = Convert.ToInt32(ConfigurationManager.AppSettings["pageSize"]);
+            var pageNumber = page ?? 1;
+
             var customerindex = db.CustomerIndexes.AsNoTracking().OrderByDescending(a => a.CreationDate);
-            return View(customerindex);
+            return View(customerindex.ToPagedList(pageNumber,pageSize));
         }
 
+        [AuthorizeRedirect(Roles = "Browser, Administrator")]
         public ActionResult ViewApplication(string applicationid)
         {
             ReportDocument appreport = new ReportDocument();
@@ -145,6 +165,7 @@ namespace tnteachershousing.Controllers
 
         }
 
+        [AuthorizeRedirect(Roles = "Browser, Administrator")]
         public ActionResult CustListReceipts(int? page)
         {
             int pageSize = Convert.ToInt32(ConfigurationManager.AppSettings["pageSize"]);
@@ -153,6 +174,7 @@ namespace tnteachershousing.Controllers
             return View(AppList.ToPagedList(pageNumber, pageSize));
         }
 
+        [AuthorizeRedirect(Roles = "Administrator")]
         [HttpGet]
         public ActionResult CreateReceipts(string applicationid)
         {
@@ -163,6 +185,7 @@ namespace tnteachershousing.Controllers
             return View(receiptsviewmodel);
         }
 
+        [AuthorizeRedirect(Roles = "Administrator")]
         [HttpPost]
         public ActionResult CreateReceipts(ReceiptsViewModel receiptsviewmodel)
         {   
@@ -193,13 +216,17 @@ namespace tnteachershousing.Controllers
             }
             
         }
-        public ActionResult ReceiptsIndex()
+        [AuthorizeRedirect(Roles = "Browser, Administrator")]
+        public ActionResult ReceiptsIndex(int? page)
         {
+            int pageSize = Convert.ToInt32(ConfigurationManager.AppSettings["pageSize"]);
+            var pageNumber = page ?? 1;
             var receipts = db.Receipts.AsNoTracking().OrderByDescending(d => d.CreationDate);
             IEnumerable<ReceiptsViewModel> receiptsviewmodel = Mapper.DynamicMap<IEnumerable<ReceiptsViewModel>>(receipts);
-            return View(receiptsviewmodel);
+            return View(receiptsviewmodel.ToPagedList(pageNumber,pageSize));
         }
 
+        [AuthorizeRedirect(Roles = "Browser, Administrator")]
         public ActionResult ShowReceipts(long applicationid)
         {
             ReportDocument receiptreport = new ReportDocument();

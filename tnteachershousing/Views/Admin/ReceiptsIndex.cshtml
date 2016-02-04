@@ -1,5 +1,6 @@
 ﻿@model IEnumerable<tnteachershousing.ViewModel.ReceiptsViewModel>
-
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Receipts Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -87,4 +88,5 @@
 
         </table>
         </div>
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("ReceiptsIndex", new { page }))
     </div>

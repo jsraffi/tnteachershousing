@@ -621,6 +621,7 @@
     <Content Include="Content\Admin\fonts\oswald-regular-webfont.ttf" />
     <Content Include="Content\Admin\fonts\oswald-regular-webfont.woff" />
     <Content Include="Content\Admin\fonts\oswald-regular-webfont.woff2" />
+    <Content Include="DbBackup\Techershosuing-04-feb-2016.bak" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af-ZA.js" />
     <Content Include="Scripts\globalize\cultures\globalize.culture.af.js" />

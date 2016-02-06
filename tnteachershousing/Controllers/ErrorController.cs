@@ -22,6 +22,11 @@ namespace tnteachershousing.Controllers
 
         }
 
+        public ActionResult Error500()
+        {
+            return View();
+        }
+
         // GET: Error/Details/5
         public ActionResult Details(int id)
         {

@@ -21,7 +21,7 @@ using tnteachershousing.ActionFilters;
 namespace tnteachershousing.Controllers
 {
 
-    [RequireHttps]
+  
     public class AdminController : Controller
     {
         private techearDBContext db = new techearDBContext();

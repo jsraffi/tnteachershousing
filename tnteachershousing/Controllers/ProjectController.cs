@@ -208,7 +208,14 @@ namespace tnteachershousing.Controllers
                 if (ModelState.IsValid)
                 {
                     CustomerApplicationForm custappmodel = Mapper.Map<CustomerApplicationForm>(custappviewmodel);
-                    custappmodel.CreationDate = DateTime.Now;
+                    DateTime utcTime = DateTime.UtcNow;
+
+                    string zoneID = "India Standard Time";
+
+                    TimeZoneInfo myZone = TimeZoneInfo.FindSystemTimeZoneById(zoneID);
+                    DateTime custDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, myZone);
+                    
+                    custappmodel.CreationDate = custDateTime;
                     db.CustomerApplicationForms.Add(custappmodel);
                     await db.SaveChangesAsync();
                     TempData["CusAppSaved"] = "done";

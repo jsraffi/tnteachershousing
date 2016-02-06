@@ -1073,6 +1073,7 @@
     <Content Include="Views\Account\getAllUsers.cshtml" />
     <Content Include="Views\Error\ErrorAuth.cshtml" />
     <Content Include="Views\Error\Error404.cshtml" />
+    <Content Include="Views\Admin\CustomerReceipts.cshtml" />
     <None Include="Views\Home\Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Views\Home\Scripts\jquery-1.10.2.js" />
     <Content Include="Views\Home\Scripts\jquery-1.10.2.min.js" />
@@ -1190,6 +1191,8 @@
     <Content Include="Views\Shared\navigationsidebaradmin.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\SelectRoleEditorViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTimeReceipts.cshtml" />
+    <Content Include="Views\Shared\_LayoutHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

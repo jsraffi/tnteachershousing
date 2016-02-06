@@ -1,6 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "sitemap";
+    ViewBag.PageInfo = "Site map";
 }
 
 <style>
@@ -24,17 +25,6 @@
 <!-- Contant
 ======================================= -->
 
-<section class="post-wrapper-top dm-shadow clearfix">
-    <div class="container">
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-            <ul class="breadcrumb">
-                <li><a href="index.php">Home</a></li>
-                <li>Sitemap</li>
-            </ul>
-            <h2>Sitemap</h2>
-        </div>
-    </div>
-</section>
 
 
 <div class="clearfix"></div>
@@ -56,8 +46,11 @@
             <li><strong><a href="@Url.Action("CompletedProject","Project")">Completed</a></strong></li>
             <li><strong><a href="@Url.Action("AllotmentProcedure","Project")">Allotment Procedure</a></strong></li>
         </ul>
-        <h4><strong><strong><a href="@Url.Action("JointVenture","Service")">Joint Ventures</a></strong></strong></h4>
-        <h4><strong><strong><a href="@Url.Action("ValueAdded","Service")">Value Added Services</a></strong></strong></h4>
+        <h4><strong>Services</strong></h4>
+        <ul class="list1">
+            <li><strong><a href="@Url.Action("JointVenture","Service")">Joint Ventures</a></strong></li>
+            <li><strong><a href="@Url.Action("ValueAdded","Service")">Other Services</a></strong></li>
+        </ul>
         <h4><strong><strong><a href="@Url.Action("index","Information")">Gallery</a></strong></strong></h4>
         <h4><strong><strong><a href="@Url.Action("newsEvent","Information")">News &amp; Events</a></strong></strong></h4>
         <h4><strong><strong><a href="@Url.Action("our_associate","Information")">Our Associates</a></strong></strong></h4>

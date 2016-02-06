@@ -2,7 +2,8 @@
 
 @{
     ViewBag.Title = "Apply for allotment";
-    
+    ViewBag.PageInfo = "Project allotment form";
+
 }
 
 <style>
@@ -60,7 +61,7 @@ input[type=checkbox]
 }
 .container_full
 {
-    width:70% !important;
+    width:100% !important;
     margin:0 auto !important;
 }
 .checkboxlabel
@@ -104,8 +105,8 @@ input[type=checkbox]
 }
 
 </style>
-<div>
-    <div style="border:solid 2px black;margin:30px;padding:50px;background-color:white;" id="appform">
+<div class="col-md-8 col-md-offset-2">
+    <div style="border:solid 2px black;padding:50px;background-color:white;" id="appform">
         <div class="box box-info">
             <div class="box-header with-border">
                 <h3 class="box-title">Application Form</h3>

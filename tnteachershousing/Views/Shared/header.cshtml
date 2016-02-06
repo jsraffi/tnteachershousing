@@ -42,16 +42,22 @@
                                         </ul><!-- end dropdown-menu -->
                                     </li>
                                     <li class="dropdown">
-                                        <a href="projects.html" data-toggle="dropdown" class="dropdown-toggle">Projects</a>
+                                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Projects</a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li>@Html.ActionLink("On going", "index", "Project")</li>
                                             <li>@Html.ActionLink("Completed", "CompletedProject", "Project")</li>
                                             <li>@Html.ActionLink("Allotment Procedure", "AllotmentProcedure", "Project")</li>
                                         </ul><!-- end dropdown-menu -->
                                     </li>
-                                    <li class="dropdown">@Html.ActionLink("Joint Venture", "JointVenture", "Service")</li>
-                                    <li class="dropdown">@Html.ActionLink("Other Services", "ValueAdded", "Service")</li>
+                                    <li class="dropdown">
+                                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Services</a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li>@Html.ActionLink("Joint Venture", "JointVenture", "Service")</li>
+                                            <li>@Html.ActionLink("Other Services", "ValueAdded", "Service")</li>
+                                        </ul><!-- end dropdown-menu -->
+                                    </li>
                                     <li class="dropdown">@Html.ActionLink("Apply for allotment", "ApplyForAllotment", "Project")</li>
+                                    <li class="dropdown">@Html.ActionLink("Payment", "CustomerReceipts", "Admin")</li>
                                     <!--<li><a href="apply-for-allotment.html" class="last">Apply for Allotment</a></li>-->
                                 </ul>
                             </div><!-- end #navbar-collapse-1 -->

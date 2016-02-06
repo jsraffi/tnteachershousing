@@ -21,7 +21,7 @@ using tnteachershousing.ActionFilters;
 namespace tnteachershousing.Controllers
 {
 
-    
+    [RequireHttps]
     public class AdminController : Controller
     {
         private techearDBContext db = new techearDBContext();
@@ -179,10 +179,77 @@ namespace tnteachershousing.Controllers
         public ActionResult CreateReceipts(string applicationid)
         {
             ReceiptsViewModel receiptsviewmodel = new ReceiptsViewModel();
+            DateTime utcTime = DateTime.UtcNow;
+
+            string zoneID = "India Standard Time";
+
+            TimeZoneInfo myZone = TimeZoneInfo.FindSystemTimeZoneById(zoneID);
+            DateTime custDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, myZone);
+
             receiptsviewmodel.CustomerRefID = applicationid;
-            receiptsviewmodel.ChequeDate = DateTime.Now;
-            receiptsviewmodel.CreationDate = DateTime.Now;
+            //receiptsviewmodel.ChequeDate = custDateTime;
+            receiptsviewmodel.CreationDate = custDateTime;
             return View(receiptsviewmodel);
+        }
+        [NoCache]
+        [AllowAnonymous]
+        [HttpGet]
+        public ActionResult CustomerReceipts()
+        {
+            ReceiptsViewModel receiptsviewmodel = new ReceiptsViewModel();
+            DateTime utcTime = DateTime.UtcNow;
+
+            string zoneID = "India Standard Time";
+
+            TimeZoneInfo myZone = TimeZoneInfo.FindSystemTimeZoneById(zoneID);
+            DateTime custDateTime = TimeZoneInfo.ConvertTimeFromUtc(utcTime, myZone);
+
+            //receiptsviewmodel.ChequeDate = custDateTime;
+            receiptsviewmodel.CreationDate = custDateTime;
+            return View(receiptsviewmodel);
+       }
+        [AllowAnonymous]
+        public JsonResult GetCustomerInfo(string applicationid)
+        {
+            
+            var customer = db.CustomerApplicationForms.Where(s => s.CustomerID == applicationid).Select(c => new { Name = c.NameOfapplicant, Relatedto = c.SonOfWifeOfGuardian, Address = c.DoorFlatNo + "  " + c.Street, City = c.City, State = c.StatePinCode }).ToList();
+            return Json(customer, JsonRequestBehavior.AllowGet);
+        }
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult CustomerReceipts(ReceiptsViewModel receiptsviewmodel)
+        {
+            try
+            {
+                long appid = db.CustomerApplicationForms.AsNoTracking().Where(c => c.CustomerID == receiptsviewmodel.CustomerRefID).Select(a => a.ApplicationID).SingleOrDefault();
+                if(appid == 0)
+                {
+                    ModelState.AddModelError("", "Invalid Customer ID");
+
+                }
+ 
+                if (ModelState.IsValid)
+                {
+                    Receipts receipts = Mapper.Map<Receipts>(receiptsviewmodel);
+                    receipts.ApplicationRefID = appid;
+                    db.Receipts.Add(receipts);
+                    db.SaveChanges();
+
+                    return RedirectToAction("ShowReceipts", "Admin", new { applicationid = receipts.ReceiptID });
+
+                }
+                else
+                {
+                    return View();
+                }
+
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", e.Message);
+                return View();
+            }
+
         }
 
         [AuthorizeRedirect(Roles = "Administrator")]
@@ -226,7 +293,7 @@ namespace tnteachershousing.Controllers
             return View(receiptsviewmodel.ToPagedList(pageNumber,pageSize));
         }
 
-        [AuthorizeRedirect(Roles = "Browser, Administrator")]
+        [AllowAnonymous]
         public ActionResult ShowReceipts(long applicationid)
         {
             ReportDocument receiptreport = new ReportDocument();

@@ -40,6 +40,7 @@ namespace tnteachershousing.ViewModel
         [Required(ErrorMessage ="Please enter postive numeric value")]
         public int Amount { get; set; }
         
+        [UIHint("DateTimeReceipts")]
         [Display(Name ="Receipt Date")]
         [Required(ErrorMessage ="Please enter a date in dd/mm/yyyy format")]
         public DateTime CreationDate { get; set; }

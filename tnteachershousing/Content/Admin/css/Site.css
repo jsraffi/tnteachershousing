@@ -241,3 +241,21 @@ body
 {
     margin:25px;
 }
+.container_full
+{
+    background-color:white !important;
+    width:100% !important;
+
+}
+.custreceipttable
+{
+    font-size:2em;
+}
+.custreceipttable tr
+{
+    height:50px;
+}
+.custreceipttable tr:first-child td
+{
+    background-color:lightblue!important;
+}
